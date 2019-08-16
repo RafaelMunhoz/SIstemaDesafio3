@@ -51,9 +51,9 @@
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Text layoutX="253.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrada">
+      <Text layoutX="246.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrada">
          <font>
-            <Font size="28.0" />
+            <Font size="32.0" />
          </font>
       </Text>
       <Button layoutX="300.0" layoutY="305.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text="Salvar" />
