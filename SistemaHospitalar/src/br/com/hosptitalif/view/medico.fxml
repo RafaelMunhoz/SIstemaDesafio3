@@ -32,12 +32,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Número de Registro">
+            <Label text="Número de Registro" textFill="#030303">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Especialidade" GridPane.rowIndex="1">
+            <Label text="Especialidade" textFill="#030303" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
