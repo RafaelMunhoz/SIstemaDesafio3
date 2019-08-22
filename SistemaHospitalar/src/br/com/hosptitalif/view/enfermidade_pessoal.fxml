@@ -27,12 +27,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Comentário" textFill="#070505">
+            <Label text="Comentário" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label prefWidth="230.0" text="Status de enfermidade" textFill="#070505" GridPane.rowIndex="1">
+            <Label prefWidth="230.0" text="Status de enfermidade" textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>

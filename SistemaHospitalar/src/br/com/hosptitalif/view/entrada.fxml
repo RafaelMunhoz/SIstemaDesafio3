@@ -28,22 +28,22 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Data Entrada" textFill="#070505">
+            <Label text="Data Entrada" textFill="#f5f5f5">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Data saída" textFill="#070505" GridPane.rowIndex="1">
+            <Label text="Data saída" textFill="#f5f5f5" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Status de entrada" textFill="#070505" GridPane.rowIndex="2">
+            <Label text="Status de entrada" textFill="#f5f5f5" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Situação do paciente" textFill="#070505" GridPane.rowIndex="3">
+            <Label text="Situação do paciente" textFill="#f5f5f5" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>

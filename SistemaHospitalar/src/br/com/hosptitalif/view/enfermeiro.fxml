@@ -32,7 +32,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Número de registro" textFill="#0a0505">
+            <Label text="Número de registro" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

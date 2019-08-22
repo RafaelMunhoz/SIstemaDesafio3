@@ -35,32 +35,32 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Comentario Enfermeiro ">
+            <Label text="Comentario Enfermeiro " textFill="#fcfcfc">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Comentario Médico" GridPane.rowIndex="1">
+            <Label text="Comentario Médico" textFill="#fcfcfc" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Peso " GridPane.rowIndex="2">
+            <Label text="Peso " textFill="#fcfcfc" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Altura" GridPane.rowIndex="3">
+            <Label text="Altura" textFill="#fcfcfc" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Data" GridPane.rowIndex="4">
+            <Label text="Data" textFill="#fcfcfc" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Doenca " GridPane.rowIndex="5">
+            <Label text="Doenca " textFill="#fcfcfc" GridPane.rowIndex="5">
                <font>
                   <Font size="18.0" />
                </font>

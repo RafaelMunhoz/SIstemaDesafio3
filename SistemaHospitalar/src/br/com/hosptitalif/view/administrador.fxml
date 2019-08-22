@@ -27,18 +27,18 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Login " textFill="#120000">
+            <Label text="Login " textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
             <TextField GridPane.columnIndex="1" />
-            <Label text="Senha " GridPane.rowIndex="1">
+            <Label text="Senha " textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Status de usuário" GridPane.rowIndex="2">
+            <Label text="Status de usuário" textFill="WHITE" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>

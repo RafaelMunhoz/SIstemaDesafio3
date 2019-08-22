@@ -37,32 +37,32 @@
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label text="Nome:" textFill="#141111">
+            <Label text="Nome:" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="CPF: " textFill="#141111" GridPane.rowIndex="1">
+            <Label text="CPF: " textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Idade:" textFill="#141111" GridPane.rowIndex="2">
+            <Label text="Idade:" textFill="WHITE" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Tipo Sanguineo: " textFill="#141111" GridPane.rowIndex="3">
+            <Label text="Tipo Sanguineo: " textFill="WHITE" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Sexo: " textFill="#141111" GridPane.rowIndex="4">
+            <Label text="Sexo: " textFill="WHITE" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Status da Pessoa: " textFill="#141111" GridPane.rowIndex="5">
+            <Label text="Status da Pessoa: " textFill="WHITE" GridPane.rowIndex="5">
                <font>
                   <Font size="18.0" />
                </font>

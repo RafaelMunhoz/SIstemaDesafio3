@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -19,5 +20,6 @@
             <Font size="25.0" />
          </font>
       </Text>
+      <Button layoutX="241.0" layoutY="213.0" mnemonicParsing="false" text="Cadastrar Paciente " />
    </children>
 </Pane>
