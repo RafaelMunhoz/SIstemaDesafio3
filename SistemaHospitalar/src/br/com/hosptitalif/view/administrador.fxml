@@ -14,9 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #00688B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-border-width: 5px; -fx-border-color: white; -fx-border-radius: 3px; -fx-background-color: #00688B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hosptitalif.controller.Administradoror">
    <children>
-      <GridPane layoutX="162.0" layoutY="113.0" prefHeight="112.0" prefWidth="299.0">
+      <GridPane layoutX="164.0" layoutY="169.0" prefHeight="112.0" prefWidth="299.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,37 +27,37 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Login " textFill="WHITE">
+            <Label text="Login " textFill="#ddcccc">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField GridPane.columnIndex="1" />
-            <Label text="Senha " textFill="WHITE" GridPane.rowIndex="1">
+            <TextField fx:id="txtLogin" GridPane.columnIndex="1" />
+            <Label text="Senha " textFill="#ddcccc" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Status de usuário" textFill="WHITE" GridPane.rowIndex="2">
+            <Label text="Status de usuário" textFill="#ddcccc" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField prefWidth="126.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtSenha" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtStatusUsuario" prefWidth="126.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Text layoutX="241.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrador">
+      <Text fill="#ddcccc" layoutX="240.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrador">
          <font>
             <Font size="19.0" />
          </font>
       </Text>
-      <Text layoutX="186.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar funcionário">
+      <Text fill="#ddcccc" layoutX="182.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar funcionário">
          <font>
             <Font size="25.0" />
          </font>
       </Text>
-      <Button layoutX="312.0" layoutY="225.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" text="Salvar">
+      <Button fx:id="btnSalvar" layoutX="314.0" layoutY="301.0" mnemonicParsing="false" onAction="#CadastrarFuncionario" prefHeight="27.0" prefWidth="84.0" text="Salvar">
          <font>
             <Font size="13.0" />
          </font>
