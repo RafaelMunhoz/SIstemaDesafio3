@@ -3,8 +3,18 @@ package br.com.hosptitalif.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
-public class Administrador {
+public class Enfermidade {
+
+    @FXML
+    private TextField txtNome;
+
+    @FXML
+    private TextField txtTipo;
+
+    @FXML
+    private TextField txtDescricao;
 
     @FXML
     private Button btnSalvar;
@@ -13,7 +23,7 @@ public class Administrador {
     private Button btnVoltar;
 
     @FXML
-    void cadastrarFuncionario(ActionEvent event) {
+    void salvar(ActionEvent event) {
 
     }
 }
