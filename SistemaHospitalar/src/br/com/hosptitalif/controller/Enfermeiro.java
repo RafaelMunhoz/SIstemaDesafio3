@@ -8,10 +8,10 @@ import javafx.scene.control.TextField;
 public class Enfermeiro {
 
     @FXML
-    private TextField txtNumeroDeRegistro;
+    private Button btnSalvar;
 
     @FXML
-    private Button btnSalvar;
+    private TextField txtNumeroDeRegistro;
 
     @FXML
     private Button btnVoltar;
@@ -21,4 +21,10 @@ public class Enfermeiro {
 
     }
 
+    @FXML
+    void voltar(ActionEvent event) {
+
+    }
+
 }
+

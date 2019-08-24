@@ -14,16 +14,21 @@ public class Funcionario {
     private TextField txtSenha;
 
     @FXML
+    private Button btnVoltar;
+
+    @FXML
     private TextField txtStatusDoUsuario;
 
     @FXML
     private Button btnEntrar;
 
     @FXML
-    private Button btnVoltar;
+    void entrar(ActionEvent event) {
+
+    }
 
     @FXML
-    void entrar(ActionEvent event) {
+    void voltar(ActionEvent event) {
 
     }
 

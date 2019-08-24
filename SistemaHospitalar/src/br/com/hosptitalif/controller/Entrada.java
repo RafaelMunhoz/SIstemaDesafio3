@@ -9,25 +9,30 @@ import javafx.scene.control.TextField;
 public class Entrada {
 
     @FXML
-    private TextField txtStatusDeEntrada;
-
-    @FXML
-    private TextField txtSituacaoDoPaciente;
+    private Button btnSalvar;
 
     @FXML
     private DatePicker pckDataEntrada;
 
     @FXML
-    private DatePicker pckDataSaida;
+    private TextField txtSituacaoDoPaciente;
 
     @FXML
-    private Button btnSalvar;
+    private DatePicker pckDataSaida;
 
     @FXML
     private Button btnVoltar;
 
     @FXML
+    private TextField txtStatusDeEntrada;
+
+    @FXML
     void salvar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void voltar(ActionEvent event) {
 
     }
 

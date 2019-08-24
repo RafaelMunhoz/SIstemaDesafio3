@@ -8,19 +8,24 @@ import javafx.scene.control.TextField;
 public class Paciente {
 
     @FXML
-    private TextField txtDoenca;
+    private Button btnSalvar;
 
     @FXML
     private TextField txtHistorico;
 
     @FXML
-    private Button btnSalvar;
+    private TextField txtDoenca;
 
     @FXML
     private Button btnVoltar;
 
     @FXML
     void salvar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void voltar(ActionEvent event) {
 
     }
 

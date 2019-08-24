@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -11,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #00688B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hosptitalif.controller.Entrada">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #00688B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hosptitalif.controller.Entrada">
    <children>
       <GridPane layoutX="70.0" layoutY="165.0" prefHeight="120.0" prefWidth="460.0">
         <columnConstraints>
@@ -57,6 +61,6 @@
          </font>
       </Text>
       <Button fx:id="btnSalvar" layoutX="300.0" layoutY="305.0" mnemonicParsing="false" onAction="#salvar" prefHeight="30.0" prefWidth="60.0" text="Salvar" />
-      <Button fx:id="btnVoltar" layoutX="369.0" layoutY="305.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="Voltar" />
+      <Button fx:id="btnVoltar" layoutX="369.0" layoutY="305.0" mnemonicParsing="false" onAction="#voltar" prefHeight="30.0" prefWidth="60.0" text="Voltar" />
    </children>
 </Pane>

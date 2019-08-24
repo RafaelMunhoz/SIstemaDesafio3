@@ -16,4 +16,10 @@ public class Administrador {
     void cadastrarFuncionario(ActionEvent event) {
 
     }
+
+    @FXML
+    void voltar(ActionEvent event) {
+
+    }
+
 }

@@ -9,31 +9,36 @@ import javafx.scene.control.TextField;
 public class Atendimento {
 
     @FXML
-    private TextField txtComentarioEnfermeiro;
-
-    @FXML
-    private TextField txtComentarioMedico;
-
-    @FXML
     private TextField txtPeso;
-
-    @FXML
-    private TextField txtAltura;
-
-    @FXML
-    private TextField txtDoenca;
-
-    @FXML
-    private DatePicker pckData;
 
     @FXML
     private Button btnSalvar;
 
     @FXML
+    private TextField txtComentarioEnfermeiro;
+
+    @FXML
+    private TextField txtDoenca;
+
+    @FXML
     private Button btnVoltar;
 
     @FXML
+    private TextField txtAltura;
+
+    @FXML
+    private TextField txtComentarioMedico;
+
+    @FXML
+    private DatePicker pckData;
+
+    @FXML
     void salvarAtendimento(ActionEvent event) {
+
+    }
+
+    @FXML
+    void voltar(ActionEvent event) {
 
     }
 

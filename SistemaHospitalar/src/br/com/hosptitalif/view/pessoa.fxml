@@ -84,7 +84,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnVoltar" layoutX="383.0" layoutY="333.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="Voltar">
+      <Button fx:id="btnVoltar" layoutX="383.0" layoutY="333.0" mnemonicParsing="false" onAction="#voltar" prefHeight="30.0" prefWidth="60.0" text="Voltar">
          <font>
             <Font size="14.0" />
          </font>

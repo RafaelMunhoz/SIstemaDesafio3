@@ -53,6 +53,6 @@
          </font>
       </Text>
       <Button fx:id="btnEntrar" layoutX="303.0" layoutY="266.0" mnemonicParsing="false" onAction="#entrar" prefHeight="30.0" prefWidth="60.0" text="Entrar " />
-      <Button fx:id="btnVoltar" layoutX="387.0" layoutY="266.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="Voltar" />
+      <Button fx:id="btnVoltar" layoutX="387.0" layoutY="266.0" mnemonicParsing="false" onAction="#voltar" prefHeight="30.0" prefWidth="60.0" text="Voltar" />
    </children>
 </Pane>

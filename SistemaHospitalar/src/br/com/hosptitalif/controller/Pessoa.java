@@ -9,31 +9,36 @@ import javafx.scene.control.TextField;
 public class Pessoa {
 
     @FXML
+    private Button btnSalvar;
+
+    @FXML
+    private Label txtStatusDaPessoa;
+
+    @FXML
+    private Button btnVoltar;
+
+    @FXML
     private TextField txtNome;
 
     @FXML
     private TextField txtCPF;
 
     @FXML
-    private TextField txtIdade;
-
-    @FXML
     private TextField txtSexo;
 
     @FXML
-    private Label txtStatusDaPessoa;
+    private TextField txtIdade;
 
     @FXML
     private TextField txtTipoSanguineo;
 
     @FXML
-    private Button btnSalvar;
-
-    @FXML
-    private Button btnVoltar;
-
-    @FXML
     void salvar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void voltar(ActionEvent event) {
 
     }
 
