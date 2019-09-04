@@ -12,13 +12,14 @@ public class Login {
     private Button btnLogin;
 
     @FXML
-    private TextField tstSenha;
+    private TextField txtSenha;
 
     @FXML
     private TextField txtUsuario;
 
     @FXML
     void login(ActionEvent event) {
+    	
     	System.out.println(txtUsuario.getText());
     	Alert msg = new Alert(Alert.AlertType.INFORMATION);
     	msg.setContentText("Conteúdo aqui");
@@ -26,4 +27,4 @@ public class Login {
     	msg.show();
     }
 }
-// Tarefa
+
