@@ -1,5 +1,6 @@
 package br.com.hosptitalif.controller;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -33,7 +34,14 @@ public class Pessoa {
 
     @FXML
     void salvar(ActionEvent event) {
-    
+    	String nome = new String(txtNome.getText());
+    	String cpf = new String(txtCPF.getText());
+    	String idade = new String(txtIdade.getText());
+    	String sexo = new String(txtSexo.getText());
+    	String statusDaPessoa = new String(txtStatusDaPessoa.getText());
+    	String tipoSanguineo = new String(txtTipoSanguineo.getText());
+    	System.out.println(nome + " " + cpf + " " + idade + " " + sexo + " " + statusDaPessoa + " " + tipoSanguineo);
+    	
     }
 
     @FXML
