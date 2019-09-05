@@ -21,7 +21,9 @@ public class Paciente {
 
     @FXML
     void salvar(ActionEvent event) {
-
+    	String historico = new String(txtHistorico.getText());
+    	String doenca = new String(txtDoenca.getText());
+    	System.out.println(historico + " " + doenca);
     }
 
     @FXML

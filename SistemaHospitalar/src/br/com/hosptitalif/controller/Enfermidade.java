@@ -11,7 +11,7 @@ public class Enfermidade {
     private Button btnSalvar;
 
     @FXML
-    private TextField txtTipo;//
+    private TextField txtTipo;
 
     @FXML
     private Button btnVoltar;
@@ -27,6 +27,7 @@ public class Enfermidade {
     	String tipo = new String(txtTipo.getText());
     	String nome = new String(txtNome.getText());
     	String descricao = new String(txtDescricao.getText());
+    	System.out.println(nome + " " + tipo + " " + descricao);
     }
 
     @FXML

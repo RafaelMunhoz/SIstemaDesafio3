@@ -21,7 +21,10 @@ public class Medico {
 
     @FXML
     void salvar(ActionEvent event) {
-
+    	Integer numeroDeRegistro = new Integer(txtNumeroDeRegistro.getText());
+    	String especialidade = new String(txtEspecialidade.getText());
+    	System.out.println(numeroDeRegistro + " " +especialidade);
+    	
     }
 
     @FXML

@@ -1,9 +1,6 @@
 package br.com.hosptitalif.controller;
 
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,7 +33,8 @@ public class Entrada {
     	LocalDate localDateEntrada = pckDataEntrada.getValue();
     	LocalDate localDateSaida = pckDataSaida.getValue();
     	String situacaoDoPaciente = txtSituacaoDoPaciente.getText();
-    	String statusDeEntrada = txtStatusDeEntrada.getText();    	
+    	String statusDeEntrada = txtStatusDeEntrada.getText();   
+    	System.out.println(localDateEntrada + " " + localDateSaida + " " + statusDeEntrada + " " + situacaoDoPaciente);
     	
     }
 
