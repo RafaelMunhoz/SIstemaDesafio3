@@ -1,5 +1,10 @@
 package br.com.hosptitalif.controller;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -34,6 +39,15 @@ public class Atendimento {
 
     @FXML
     void salvarAtendimento(ActionEvent event) {
+    	Float altura = new Float(txtAltura.getText());
+    	String comentarioEnfermeiro = new String(txtComentarioEnfermeiro.getText());
+    	String comentarioMedico = new String(txtComentarioMedico.getText());
+    	String doenca = new String(txtDoenca.getText());
+    	Float peso = new Float(txtPeso.getText());
+    	LocalDate localDate = pckData.getValue();
+    	Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
+    	Date date = Date.from(instant);    	
+    	System.out.println(localDate + "\n" + instant + "\n" + date);
 
     }
 
