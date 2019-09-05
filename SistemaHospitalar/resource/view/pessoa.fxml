@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -15,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #00688B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hosptitalif.controller.Pessoa">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #00688B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hosptitalif.controller.Pessoa">
    <children>
       <GridPane layoutX="125.0" layoutY="101.0" prefHeight="221.0" prefWidth="353.0">
         <columnConstraints>
@@ -36,7 +32,7 @@
             <TextField fx:id="txtIdade" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="txtSexo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtStatusDaPessoa" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label text="Nome" textFill="WHITE">
                <font>
                   <Font size="18.0" />
@@ -62,7 +58,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="txtStatusDaPessoa" text="Status da Pessoa" textFill="WHITE" GridPane.rowIndex="5">
+            <Label text="Status da Pessoa" textFill="WHITE" GridPane.rowIndex="5">
                <font>
                   <Font size="18.0" />
                </font>
