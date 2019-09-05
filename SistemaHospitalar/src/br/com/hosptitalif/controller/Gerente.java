@@ -18,7 +18,8 @@ public class Gerente {
 
     @FXML
     void salvar(ActionEvent event) {
-
+    	String cargo = new String(txtCargo.getText());
+    	System.out.println(cargo);
     }
 
     @FXML

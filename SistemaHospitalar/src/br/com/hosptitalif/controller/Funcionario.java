@@ -24,7 +24,10 @@ public class Funcionario {
 
     @FXML
     void entrar(ActionEvent event) {
-
+    	String user = new String(txtLogin.getText());
+    	String pass = new String(txtSenha.getText());
+    	String statusDoUsuario = new String(txtStatusDoUsuario.getText());
+    	System.out.println(user + " " + pass + " " + statusDoUsuario);
     }
 
     @FXML

@@ -1,5 +1,10 @@
 package br.com.hosptitalif.controller;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -28,7 +33,11 @@ public class Entrada {
 
     @FXML
     void salvar(ActionEvent event) {
-
+    	LocalDate localDateEntrada = pckDataEntrada.getValue();
+    	LocalDate localDateSaida = pckDataSaida.getValue();
+    	String situacaoDoPaciente = txtSituacaoDoPaciente.getText();
+    	String statusDeEntrada = txtStatusDeEntrada.getText();    	
+    	
     }
 
     @FXML

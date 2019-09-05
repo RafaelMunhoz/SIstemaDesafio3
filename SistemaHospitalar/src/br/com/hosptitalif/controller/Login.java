@@ -20,7 +20,7 @@ public class Login {
 	@FXML
 	void login(ActionEvent event) {
 		String user = new String(txtUsuario.getText());
-		String pass = new String(txtSenha.getText());
+		String pass = new String(txtSenha.getText());  
 
 		Alert msg = new Alert(Alert.AlertType.INFORMATION);
 		msg.setHeaderText("header");

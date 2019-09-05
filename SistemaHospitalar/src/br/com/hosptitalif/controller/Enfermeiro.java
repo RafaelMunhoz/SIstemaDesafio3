@@ -18,13 +18,13 @@ public class Enfermeiro {
 
     @FXML
     void salvar(ActionEvent event) {
-
+    	Integer NumeroDeRegistro = new Integer(txtNumeroDeRegistro.getText());
+    	System.out.println(NumeroDeRegistro);
     }
 
     @FXML
     void voltar(ActionEvent event) {
 
     }
-
 }
 
