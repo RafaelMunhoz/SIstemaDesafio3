@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class conexao {
+public class Conexao {
 		
 	    public String status = "não conectado";
 	
@@ -36,6 +36,7 @@ public class conexao {
 		return this.conn;
 		
 	}
+	
 	public String getStatus() {
 		return this.status;
 	}
