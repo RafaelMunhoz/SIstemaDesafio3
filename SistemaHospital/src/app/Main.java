@@ -1,6 +1,9 @@
 package app;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import br.com.hospitalif.conexao.Conexao;
 import br.com.hospitalif.util.Rotas;
@@ -13,6 +16,7 @@ public class Main extends Application{
 	
 	static Stage stageAtual;
 	static FXMLLoader loader;
+	private static Connection conexao;
 	
 	@Override
 	public void start(Stage Stage) throws Exception {
@@ -34,16 +38,16 @@ public class Main extends Application{
 			stageAtual.show();
 	}
 	
-	public static void main (String[] args) {
+	public static void main (String[] args) throws SQLException {
 		launch(args);
 		Conexao con = new Conexao();
+		
 		System.out.println(con.getConnection());
 		System.out.println(con.getStatus());
-		/*
-		 String inserir = "insert into table() values(?, ?, ?)"
-		 PreparedStatement stmt = ? 
-		 stmt.setInt(4, txtLogin.getText()) 
-		  */
 		
+		String inserir = "insert into hospitalfx(idAtendimento, comentarioEnfermeiro) values(? , ?)";
+		PreparedStatement stmt = conexao.prepareStatement(inserir);
+		stmt.setInt(1, 1);
+		stmt.setString(2, "Lá");
 	}
 }
