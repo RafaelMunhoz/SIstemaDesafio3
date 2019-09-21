@@ -1,7 +1,9 @@
 package app;
 
 import java.io.IOException;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import br.com.hospitalif.conexao.Conexao;
 import br.com.hospitalif.util.Rotas;
@@ -39,11 +41,11 @@ public class Main extends Application {
 		stageAtual.show();
 
 	}
+	
 
-	public static void main(String[] args) {
-		Conexao con = new Conexao();
-		con.getConnection();		System.out.println(con.getStatus());
-		launch(args);
+	public static void main(String[] args) throws SQLException {
+		//launch(args);
+		
 	}
 
 }
