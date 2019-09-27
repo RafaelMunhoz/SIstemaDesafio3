@@ -1,4 +1,5 @@
-package br.com.hosptitalif.model;
+
+package br.com.hospitalif.model;
 
 public class Pessoa {
 	private Integer idPessoa;

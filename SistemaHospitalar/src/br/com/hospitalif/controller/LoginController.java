@@ -1,4 +1,4 @@
-package br.com.hosptitalif.controller;
+package br.com.hospitalif.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class Login {
+public class LoginController {
 
 	@FXML
 	private Button btnLogin;

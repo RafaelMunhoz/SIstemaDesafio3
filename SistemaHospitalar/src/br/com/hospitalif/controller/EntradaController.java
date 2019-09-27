@@ -1,4 +1,4 @@
-package br.com.hosptitalif.controller;
+package br.com.hospitalif.controller;
 
 import java.time.LocalDate;
 
@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class Entrada {
+public class EntradaController {
 
     @FXML
     private Button btnSalvar;

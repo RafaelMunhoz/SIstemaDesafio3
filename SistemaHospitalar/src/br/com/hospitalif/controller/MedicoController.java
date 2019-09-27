@@ -1,11 +1,11 @@
-package br.com.hosptitalif.controller;
+package br.com.hospitalif.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class Enfermeiro {
+public class MedicoController {
 
     @FXML
     private Button btnSalvar;
@@ -17,14 +17,19 @@ public class Enfermeiro {
     private Button btnVoltar;
 
     @FXML
+    private TextField txtEspecialidade;
+
+    @FXML
     void salvar(ActionEvent event) {
-    	Integer NumeroDeRegistro = new Integer(txtNumeroDeRegistro.getText());
-    	System.out.println(NumeroDeRegistro);
+    	Integer numeroDeRegistro = new Integer(txtNumeroDeRegistro.getText());
+    	String especialidade = new String(txtEspecialidade.getText());
+    	System.out.println(numeroDeRegistro + " " +especialidade);
+    	
     }
 
     @FXML
     void voltar(ActionEvent event) {
 
     }
-}
 
+}

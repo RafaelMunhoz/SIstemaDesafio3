@@ -1,4 +1,4 @@
-package br.com.hosptitalif.model;
+package br.com.hospitalif.model;
 
 public class EnfermidadePessoal {
 	private Integer idEnfermidadePessoal;
