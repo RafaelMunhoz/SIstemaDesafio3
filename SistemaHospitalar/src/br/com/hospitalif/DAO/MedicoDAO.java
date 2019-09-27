@@ -16,9 +16,9 @@ public class MedicoDAO {
 		String sqlInsere ="INSERT INTO Atendimento VALUES (?,?,?,?,?,?,?) ";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		
-//		stmt.setInt(1, a.getIdAtendimento());
-//		stmt.setString(2, a.getComentarioEnfermeiro());
-//		stmt.setString(3, a.getComentarioMedico());
-//		stmt.execute();
+		stmt.setInt(1, 1);
+		stmt.setString(2,"S");
+		stmt.setString(3, "s");
+		stmt.execute();
 	}
 }

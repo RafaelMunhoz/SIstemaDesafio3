@@ -8,26 +8,23 @@ import javafx.scene.control.TextField;
 public class EnfermidadeController {
 
     @FXML
-    private Button btnSalvar;
+    private TextField txtNome;
 
     @FXML
     private TextField txtTipo;
 
     @FXML
-    private Button btnVoltar;
-
-    @FXML
-    private TextField txtNome;
-
-    @FXML
     private TextField txtDescricao;
 
     @FXML
+    private Button btnSalvar;
+
+    @FXML
+    private Button btnVoltar;
+
+    @FXML
     void salvar(ActionEvent event) {
-    	String tipo = new String(txtTipo.getText());
-    	String nome = new String(txtNome.getText());
-    	String descricao = new String(txtDescricao.getText());
-    	System.out.println(nome + " " + tipo + " " + descricao);
+
     }
 
     @FXML

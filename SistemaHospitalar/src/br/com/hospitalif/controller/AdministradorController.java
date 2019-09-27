@@ -6,19 +6,20 @@ import javafx.scene.control.Button;
 
 public class AdministradorController {
 
-	@FXML
-	private Button btnSalvar;
+    @FXML
+    private Button btnSalvar;
 
-	@FXML
-	private Button btnVoltar;
+    @FXML
+    private Button btnVoltar;
 
-	@FXML
-	void cadastrarFuncionario(ActionEvent event) {
+    @FXML
+    void cadastrarFuncionario(ActionEvent event) {
 
-	}
+    }
 
-	@FXML
-	void voltar(ActionEvent event) {
+    @FXML
+    void voltar(ActionEvent event) {
 
-	}
+    }
+
 }
