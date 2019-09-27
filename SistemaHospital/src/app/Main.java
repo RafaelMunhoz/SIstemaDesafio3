@@ -1,11 +1,8 @@
 package app;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
-import br.com.hospitalif.conexao.Conexao;
+
 import br.com.hospitalif.util.Rotas;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +16,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage Stage) throws Exception {
+		
 		stageAtual = Stage;
 
 		try {
@@ -29,7 +27,7 @@ public class Main extends Application {
 //			Stage.show();
 			openpage(Rotas.LOGIN);
 		} catch (IOException a) {
-			
+			a.printStackTrace();
 		}
 	}
 
@@ -41,11 +39,9 @@ public class Main extends Application {
 		stageAtual.show();
 
 	}
-	
 
-	public static void main(String[] args) throws SQLException {
-		//launch(args);
-		
+	public static void main(String[] args) {
+		launch(args);
 		
 	}
 

@@ -1,4 +1,4 @@
-package br.com.hospitalif.model;
+	package br.com.hospitalif.model;
 
 
 import java.sql.Date;
@@ -62,5 +62,4 @@ public class Atendimento {
 		return this.doenca;
 	}
 	
-
 }
