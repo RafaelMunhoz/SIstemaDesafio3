@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Conexao {
 		
 	    public String status = "não conectado";
-	
+	    
 		public String user ="root";
 		 Connection conn = null;
 		 String pwd = "";

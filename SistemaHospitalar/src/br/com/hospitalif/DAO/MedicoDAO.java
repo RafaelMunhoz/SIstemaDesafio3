@@ -13,12 +13,13 @@ public class MedicoDAO {
 		Conexao conn = new  Conexao();
 		Connection conexao =  conn.getConnection();
 		System.out.println(conn.getStatus());
-		String sqlInsere ="INSERT INTO Atendimento VALUES (?,?,?,?,?,?,?) ";
+		String sqlInsere ="INSERT INTO m VALUES (?,?,?,?) ";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		
 		stmt.setInt(1, 1);
-		stmt.setString(2,"S");
-		stmt.setString(3, "s");
+		stmt.setInt(2, m.getNumeroderegistro());
+		stmt.setString(3, m.getEspecialidade());
+		stmt.setInt(2, 1);
 		stmt.execute();
 	}
 }
