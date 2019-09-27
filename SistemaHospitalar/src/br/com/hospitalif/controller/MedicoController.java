@@ -27,7 +27,6 @@ public class MedicoController {
     void salvar(ActionEvent event) throws SQLException {
     	Integer numeroDeRegistro = new Integer(txtNumeroDeRegistro.getText());
     	String especialidade = new String(txtEspecialidade.getText());
-//    	System.out.println(numeroDeRegistro + " " + especialidade);
     	Medico m = new Medico();
     	m.setNumeroderegistro(numeroDeRegistro);
     	m.setEspecialidade(especialidade);

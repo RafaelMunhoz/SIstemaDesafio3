@@ -11,7 +11,7 @@ public class Conexao {
 		public String user ="root";
 		 Connection conn = null;
 		 String pwd = "";
-		 String driverName = "com.mysql.jdbc.Driver";
+		 String driverName = "com.mysql.cj.jdbc.Driver";
 		 String server ="localhost";
 		 String bdName = "hospitalFX";
  		 String url ="jdbc:mysql://" + server + ":3306/" + bdName;   
