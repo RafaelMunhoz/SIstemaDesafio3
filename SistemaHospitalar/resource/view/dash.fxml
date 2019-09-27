@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="625.0" style="-fx-background-color: #00688B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="550.0" prefWidth="176.0" style="-fx-background-color: #00688B;">
+         <children>
+            <Pane prefHeight="70.0" prefWidth="150.0">
+               <children>
+                  <Label layoutX="29.0" layoutY="22.0" style="text-color: black;" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Italic" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Administrador" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Atendente" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Atendimento" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Enfermeiro" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Enfermidade" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Enfermidade Pessoal" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Entrada" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Funcionário" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Gerente " textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Médico" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Paciente" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Pessoa" textFill="#222020">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

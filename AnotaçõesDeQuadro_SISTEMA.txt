@@ -1,0 +1,14 @@
+Sistema hospitalar 
+
+v1.0
+-Modelos (Pessoa, leitos, salasCirurgias)
+-Interface Gráfica 
+
+v2.0(+3Semanas)
+-> Configurar com DB/CRUD
+
+v3.0(+1semana)
+-> Validações 
+
+v4.0
+-> css e teste
