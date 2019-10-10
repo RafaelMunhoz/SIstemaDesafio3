@@ -16,15 +16,14 @@ public class MedicoDAO {
 		System.out.println(conn.getStatus());
 		
 		//Inserindo Pessoa 
-		String sqlPessoa = "INSERT INTO pessoa VALUES (?,?,?,?,?,?,?)";
+		String sqlPessoa = "INSERT INTO pessoa VALUES (?,?,?,?,?,?)";
 		PreparedStatement stmtPessoa = conexao.prepareStatement(sqlPessoa);
-		stmtPessoa.setInt(1, 1);
-		stmtPessoa.setString(2, "Pessoa1");
-		stmtPessoa.setString(3, "07739587117");
-		stmtPessoa.setInt(4, 18);
-		stmtPessoa.setString(5, "TipoSanguineo1");
-		stmtPessoa.setString(6, "Masculino");
-		stmtPessoa.setString(7, "StatusPessoa-1");
+		stmtPessoa.setString(1, "Pessoa1");
+		stmtPessoa.setString(2, "07739587117");
+		stmtPessoa.setInt(3, 18);
+		stmtPessoa.setString(4, "TipoSanguineo1");
+		stmtPessoa.setString(5, "Masculino");
+		stmtPessoa.setString(6, "StatusPessoa-1");
 		stmtPessoa.execute();
 		
 		//Inserindo Funcionario 
@@ -37,12 +36,10 @@ public class MedicoDAO {
 		stmtFuncionario.execute();
 		
 		//Inserindo Medico
-		String sqlInsere = "INSERT INTO medico VALUES (?,?,?,?) ";
+		String sqlInsere = "INSERT INTO medico VALUES (?,?) ";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
-		stmt.setInt(1, 1);
-		stmt.setInt(2, m.getNumeroderegistro());
-		stmt.setString(3, m.getEspecialidade());
-		stmt.setInt(4, 2);
+		stmt.setInt(1, m.getNumeroderegistro());
+		stmt.setString(2, m.getEspecialidade());
 		stmt.execute();
 	}
 }

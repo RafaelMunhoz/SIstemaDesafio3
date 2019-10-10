@@ -27,12 +27,13 @@ public class MedicoController {
     void salvar(ActionEvent event) throws SQLException {
     	Integer numeroDeRegistro = new Integer(txtNumeroDeRegistro.getText());
     	String especialidade = new String(txtEspecialidade.getText());
+    	
     	Medico m = new Medico();
     	m.setNumeroderegistro(numeroDeRegistro);
     	m.setEspecialidade(especialidade);
+    	
     	MedicoDAO medicoDAO = new MedicoDAO();
     	medicoDAO.save(m);
-    	
     }
 
     @FXML
