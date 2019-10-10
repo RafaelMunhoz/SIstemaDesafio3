@@ -1,8 +1,9 @@
 create database hospitalFX;
 use  hospitalFX;
 
+
 create table Pessoa (
-idPessoa int not null,
+idPessoa int not null AUTO_INCREMENT,
 nome varchar(50),
 cpf varchar(50),
 idade int,
@@ -13,7 +14,7 @@ constraint PK_Pessoa primary key(idPessoa));
 
 
 create table Funcionario (
-idFuncionario int not null,
+idFuncionario int not null AUTO_INCREMENT,
 login varchar(50),
 senha varchar(50),
 statusFuncionario varchar(200),
@@ -22,37 +23,33 @@ constraint PK_Funcionario primary key(idFuncionario),
 constraint FK_Fp foreign key (idPessoa) references Pessoa(idPessoa));
 
 create table Gerente (
-idGerente int not null,
+idGerente int not null AUTO_INCREMENT,
 cargo varchar(50),
 idFuncionario int,
--- idPessoa int not null,
 constraint PK_Gerente primary key(idGerente),
--- constraint FK_Gp foreign key (idPessoa) references Pessoa(idPessoa),
 constraint FK_Gf foreign key (idFuncionario) references Funcionario(idFuncionario));
 
 create table Enfermeiro (
-idEnfermeiro int not null,
+idEnfermeiro int not null AUTO_INCREMENT,
 numeroRegistro varchar(50),
 idFuncionario int,
 constraint PK_Enfermeiro  primary key(idEnfermeiro),
 constraint FK_Ef foreign key (idFuncionario) references Funcionario(idFuncionario));
 
 create table Medico (
-idMedico int not null,
+idMedico int not null AUTO_INCREMENT,
 numeroRegistro varchar(50),
 especialidade varchar(50),
-idFuncionario int,
-constraint PK_Medico primary key(idMedico),
-constraint FK_Mf foreign key (idFuncionario) references Funcionario(idFuncionario));
+constraint PK_Medico primary key(idMedico));
 
 create table Paciente (
-idPaciente int not null,
+idPaciente int not null AUTO_INCREMENT,
 doenca varchar (300),
 historico varchar (300),
 constraint PK_Paciente primary key (idPaciente));
 
 create table Entrada (
-idEntrada int not null,
+idEntrada int not null AUTO_INCREMENT,
 dataEntrada date,
 dataSaida date,
 statusEntrada varchar(50),
@@ -60,7 +57,7 @@ situacaoPaciente varchar(300),
 constraint PK_Entrada primary key (idEntrada));
 
 create table Atendimento (
-idAtendimento int not null,
+idAtendimento int not null AUTO_INCREMENT,
 comentarioEnfermeiro varchar(100),
 comentarioMedico varchar(100),
 altura float,
@@ -71,13 +68,13 @@ constraint PK_Atendimento primary key (idAtendimento));
 
 
 create table EnfermidadePessoal (
-idEnfermidadePessoal int not null,
+idEnfermidadePessoal int not null AUTO_INCREMENT,
 comentario varchar(100),
 statusEnfermeiro varchar(100),
 constraint PK_EnfermidadePessoal primary key (idEnfermidadePessoal));
 
 create table Enfermidade(
-idEnfermidade int not null,
+idEnfermidade int not null AUTO_INCREMENT,
 nome varchar(50),
 tipo varchar(50),
 descricao varchar(150),
