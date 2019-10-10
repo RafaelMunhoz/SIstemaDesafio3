@@ -12,11 +12,12 @@ public class MedicoDAO {
 
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
-		//Print do status da conexão
+		// Print do status da conexão
 		System.out.println(conn.getStatus());
-		
-		//Inserindo Pessoa 
-		String sqlPessoa = "INSERT INTO pessoa VALUES (?,?,?,?,?,?)";
+
+		// Inserindo Pessoa
+		String sqlPessoa = "INSERT INTO pessoa (nome,cpf,idade,"
+				+ "tipoSanguineo,sexo,statusPessoa) VALUES(?,?,?,?,?,?)";
 		PreparedStatement stmtPessoa = conexao.prepareStatement(sqlPessoa);
 		stmtPessoa.setString(1, "Pessoa1");
 		stmtPessoa.setString(2, "07739587117");
@@ -26,17 +27,18 @@ public class MedicoDAO {
 		stmtPessoa.setString(6, "StatusPessoa-1");
 		stmtPessoa.execute();
 		
-		//Inserindo Funcionario 
-		String sqlFuncionario = "INSERT INTO funcionario VALUES(?,?,?,?)";
+		// Inserindo Funcionario
+		String sqlFuncionario = "INSERT INTO funcionario (login, senha, statusFuncionario, idPessoa)"
+				+ " VALUES(?,?,?,?)";
 		PreparedStatement stmtFuncionario = conexao.prepareStatement(sqlFuncionario);
 		stmtFuncionario.setString(1, "Login1");
 		stmtFuncionario.setString(2, "Senha1");
 		stmtFuncionario.setString(3, "StatusFunc");
 		stmtFuncionario.setInt(4, 1);
 		stmtFuncionario.execute();
-		
-		//Inserindo Medico
-		String sqlInsere = "INSERT INTO medico VALUES (?,?) ";
+
+		// Inserindo Medico
+		String sqlInsere = "INSERT INTO medico (numeroRegistro, especialidade) VALUES (?,?) ";
 		PreparedStatement stmt = conexao.prepareStatement(sqlInsere);
 		stmt.setInt(1, m.getNumeroderegistro());
 		stmt.setString(2, m.getEspecialidade());

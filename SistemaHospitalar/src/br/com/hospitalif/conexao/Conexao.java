@@ -13,7 +13,7 @@ public class Conexao {
 		 String pwd = "";
 		 String driverName = "com.mysql.cj.jdbc.Driver";
 		 String server ="localhost";
-		 String bdName = "hospitalFX";
+		 String bdName = "hospitalfx";
  		 String url ="jdbc:mysql://" + server + ":3306/" + bdName;   
 		
 	public Connection getConnection() {
