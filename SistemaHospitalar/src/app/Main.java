@@ -32,6 +32,7 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 		Conexao con = new Conexao();
+		con.getConnection();
 		System.out.println(con.getStatus());
 	}
 
