@@ -7,7 +7,7 @@ public class Pessoa {
 	private String cpf;
 	private Integer idade;
 	private String tipoSanguineo;
-	private char sexo;
+	private String sexo;
 	private String statusDaPessoa;
 	public Integer getIdPessoa() {
 		return idPessoa;
@@ -39,10 +39,10 @@ public class Pessoa {
 	public void setTipoSanguineo(String tipoSanguineo) {
 		this.tipoSanguineo = tipoSanguineo;
 	}
-	public char getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
-	public void setSexo(char sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 	public String getStatusDaPessoa() {
