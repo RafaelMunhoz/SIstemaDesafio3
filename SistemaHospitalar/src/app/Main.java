@@ -2,7 +2,8 @@ package app;
 
 import java.io.IOException;
 
-import br.com.hospitalif.conexao.Conexao;
+
+
 import br.com.hospitalif.util.Rotas;
 //import br.com.hospitalif.util.Rotas;
 import javafx.application.Application;
@@ -19,7 +20,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		stageAtual = stage;
-		openpage(Rotas.MEDICO);
+		openpage(Rotas.DASH);
 
 //		loader = new FXMLLoader(getClass().getResource(Rotas.PESSOA));  -- Codigo grande virou método openpage 
 //		Parent root = loader.load();
@@ -31,9 +32,6 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
-		Conexao con = new Conexao();
-		con.getConnection();
-		System.out.println(con.getStatus());
 	}
 
 	public void openpage(String rota) throws IOException {

@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="625.0" style="-fx-background-color: #00688B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.DashController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #00688B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.hospitalif.controller.DashController">
    <children>
-      <VBox prefHeight="550.0" prefWidth="176.0" style="-fx-background-color: #00688B;">
+      <VBox layoutX="22.0" layoutY="14.0" prefHeight="550.0" prefWidth="176.0" style="-fx-background-color: #00688B;">
          <children>
             <Pane prefHeight="70.0" prefWidth="150.0">
                <children>
@@ -20,62 +20,62 @@
                   </Label>
                </children>
             </Pane>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Administrador" textFill="#222020">
+            <Button fx:id="btnAdministrador" mnemonicParsing="false" onAction="#administradorController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Administrador" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Atendente" textFill="#222020">
+            <Button fx:id="btnAtendente" mnemonicParsing="false" onAction="#atendenteController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Atendente" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Atendimento" textFill="#222020">
+            <Button fx:id="btnAtendimento" mnemonicParsing="false" onAction="#atendimentoController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Atendimento" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Enfermeiro" textFill="#222020">
+            <Button fx:id="btnEnfermeiro" mnemonicParsing="false" onAction="#enfermeiroController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Enfermeiro" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Enfermidade" textFill="#222020">
+            <Button fx:id="btnEnfermidade" mnemonicParsing="false" onAction="#enfermidadeController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Enfermidade" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Enfermidade Pessoal" textFill="#222020">
+            <Button fx:id="btnEnfermidadePessoal" mnemonicParsing="false" onAction="#enfermidadePessoalController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Enfermidade Pessoal" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Entrada" textFill="#222020">
+            <Button fx:id="btnEntrada" mnemonicParsing="false" onAction="#entradaController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Entrada" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Funcionário" textFill="#222020">
+            <Button fx:id="btnFuncionario" mnemonicParsing="false" onAction="#funcionarioController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Funcionário" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Gerente " textFill="#222020">
+            <Button fx:id="btnGerente" mnemonicParsing="false" onAction="#gerenteController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Gerente " textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Médico" textFill="#222020">
+            <Button fx:id="btnMedico" mnemonicParsing="false" onAction="#medicoController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Médico" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Paciente" textFill="#222020">
+            <Button fx:id="btnPaciente" mnemonicParsing="false" onAction="#pacienteController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Paciente" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Pessoa" textFill="#222020">
+            <Button fx:id="btnPessoa" mnemonicParsing="false" onAction="#pessoaController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Pessoa" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>

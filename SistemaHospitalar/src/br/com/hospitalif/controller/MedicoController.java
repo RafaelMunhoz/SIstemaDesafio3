@@ -1,17 +1,20 @@
 package br.com.hospitalif.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
+import app.Main;
 import br.com.hospitalif.DAO.MedicoDAO;
 import br.com.hospitalif.model.Funcionario;
 import br.com.hospitalif.model.Medico;
 import br.com.hospitalif.model.Pessoa;
+import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class MedicoController {
+public class MedicoController extends Main{
 
     @FXML
     private TextField txtNumeroDeRegistro;
@@ -88,8 +91,8 @@ public class MedicoController {
     }
     
     @FXML
-    void voltar(ActionEvent event) {
-
+    void voltar(ActionEvent event) throws IOException {
+    	openpage(Rotas.ADMINISTRADOR);
     }
 
 }

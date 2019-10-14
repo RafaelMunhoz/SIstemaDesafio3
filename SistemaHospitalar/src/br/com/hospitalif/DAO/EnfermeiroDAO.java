@@ -6,13 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import br.com.hospitalif.conexao.Conexao;
+import br.com.hospitalif.model.Enfermeiro;
 import br.com.hospitalif.model.Funcionario;
-import br.com.hospitalif.model.Medico;
 import br.com.hospitalif.model.Pessoa;
 
-public class MedicoDAO {
-	public void save(Pessoa p, Funcionario f, Medico m) throws SQLException {
-
+public class EnfermeiroDAO {
+	public void save(Pessoa p, Funcionario f, Enfermeiro e) throws SQLException {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 
@@ -27,6 +26,7 @@ public class MedicoDAO {
 		stmtPessoa.setString(5, p.getSexo());
 		stmtPessoa.setString(6, p.getStatusDaPessoa());
 		stmtPessoa.execute();
+
 		// Consulta para buscar id
 		sqlPessoa = "select idPessoa from pessoa where cpf = " + p.getCpf();
 		stmtPessoa = conexao.prepareStatement(sqlPessoa);
@@ -57,38 +57,12 @@ public class MedicoDAO {
 		}
 		stmtFuncionario.close();
 
-		// Inserindo Medico
-		String sqlMedico = "INSERT INTO medico (numeroRegistro, especialidade, idFuncionario) VALUES (?,?,?) ";
-		PreparedStatement stmt = conexao.prepareStatement(sqlMedico);
-		stmt.setInt(1, m.getNumeroderegistro());
-		stmt.setString(2, m.getEspecialidade());
-		stmt.setInt(3, f.getIdFuncionario());
-		stmt.execute();
+		// Enfermeiro
+		String sqlEnfermeiro = "INSERT INTO enfermeiro(numeroRegistro, idFuncionario) values(?,?)";
+		PreparedStatement stmtEnfermeiro = conexao.prepareStatement(sqlEnfermeiro);
+		stmtEnfermeiro.setInt(1, e.getNumeroderegistro());
+		stmtEnfermeiro.setInt(2, f.getIdFuncionario());
+		stmtEnfermeiro.execute();
+		stmtEnfermeiro.close();
 	}
-
-	public void removeById(int id) throws SQLException {
-		Conexao conn = new Conexao();
-		Connection conexao = conn.getConnection();
-		
-		
-		//Consulta para buscar id de funcionario
-		Funcionario f = new Funcionario();
-		
-		String sqlSELECT = "select m.idFuncionario from medico m, funcionario f "
-				+ "where m.idMedico = " + id + " and f.idFuncionario";
-		PreparedStatement stmt = conexao.prepareStatement(sqlSELECT);
-		ResultSet rs = stmt.executeQuery(sqlSELECT);
-		
-		if (rs.next()) {
-			f.setIdFuncionario(rs.getInt(1));
-		}
-		stmt.close();
-		
-		//Deletar registro
-		String sqlDelete = "DELETE FROM medico WHERE id=(?)";
-		stmt = conexao.prepareStatement(sqlDelete);
-		stmt.setInt(1, id);
-		stmt.execute();
-	}
-
 }

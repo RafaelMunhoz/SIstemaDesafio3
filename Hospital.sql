@@ -1,6 +1,12 @@
 create database hospitalFX;
 use  hospitalFX;
 
+alter table Funcionario change statusFuncionario statusDeUsuario varchar(200);
+
+create table atendente(
+idAtendente int not null AUTO_INCREMENT,
+cargo varchar(50),
+constraint PK_Atendente primary key(idAtendente));
 
 create table Pessoa (
 idPessoa int not null AUTO_INCREMENT,
@@ -11,7 +17,6 @@ tipoSanguineo varchar(50),
 sexo varchar(50),
 statusPessoa varchar(200),
 constraint PK_Pessoa primary key(idPessoa));
-
 
 create table Funcionario (
 idFuncionario int not null AUTO_INCREMENT,
@@ -40,7 +45,10 @@ create table Medico (
 idMedico int not null AUTO_INCREMENT,
 numeroRegistro varchar(50),
 especialidade varchar(50),
-constraint PK_Medico primary key(idMedico));
+idFuncionario int,
+constraint PK_Medico primary key(idMedico),
+constraint FK_Mf foreign key (idFuncionario) references Funcionario(idFuncionario)
+);
 
 create table Paciente (
 idPaciente int not null AUTO_INCREMENT,
