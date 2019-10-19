@@ -2,8 +2,6 @@ package app;
 
 import java.io.IOException;
 
-
-
 import br.com.hospitalif.util.Rotas;
 //import br.com.hospitalif.util.Rotas;
 import javafx.application.Application;
@@ -20,7 +18,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		stageAtual = stage;
-		openpage(Rotas.DASH);
+		openpage(Rotas.LOGIN);
 
 //		loader = new FXMLLoader(getClass().getResource(Rotas.PESSOA));  -- Codigo grande virou método openpage 
 //		Parent root = loader.load();
