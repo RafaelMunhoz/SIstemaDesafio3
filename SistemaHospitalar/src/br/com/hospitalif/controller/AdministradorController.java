@@ -27,7 +27,7 @@ public class AdministradorController extends Main{
 
     @FXML
     void cadastrarAtendente(ActionEvent event) throws IOException {
-    	openpage(Rotas.ATENDENTE);
+    	openpage(Rotas.ADM_ATENDENTE);
     }
 
     @FXML

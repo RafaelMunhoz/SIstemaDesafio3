@@ -1,5 +1,10 @@
 package br.com.hospitalif.controller;
 
+import java.io.IOException;
+
+import app.Main;
+import br.com.hospitalif.util.Rotas;
+
 //import java.time.Instant;
 //import java.time.LocalDate;
 //import java.time.ZoneId;
@@ -11,7 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class AtendimentoController {
+public class AtendimentoController extends Main{
 
     @FXML
     private TextField txtPeso;
@@ -52,8 +57,8 @@ public class AtendimentoController {
     }
 
     @FXML
-    void voltar(ActionEvent event) {
-
+    void voltar(ActionEvent event) throws IOException {
+    	openpage(Rotas.DASH);
     }
 
 }

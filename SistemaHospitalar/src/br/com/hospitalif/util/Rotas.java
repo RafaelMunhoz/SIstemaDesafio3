@@ -15,5 +15,6 @@ public class Rotas {
 	public static String MEDICO = "/view/medico.fxml";
 	public static String PACIENTE = "/view/paciente.fxml";
 	public static String PESSOA = "/view/pessoa.fxml";
+	public static String ADM_ATENDENTE = "/view/adm_atendente.fxml";
 	
 }

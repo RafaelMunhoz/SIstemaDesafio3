@@ -41,12 +41,12 @@
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="btnEnfermidadePessoal" mnemonicParsing="false" onAction="#enfermidadePessoalController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Enfermidade Pessoal" textFill="#222020">
+            <Button fx:id="btnEnfermidadePessoal" mnemonicParsing="false" onAction="#enfermidadePessoalController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Enfermidade Pessoal" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="btnEntrada" mnemonicParsing="false" onAction="#entradaController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Entrada" textFill="#222020">
+            <Button fx:id="btnEntrada" mnemonicParsing="false" onAction="#entradaController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Entrada" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>

@@ -20,9 +20,6 @@ public class DashController extends Main{
     private Button btnAtendimento;
 
     @FXML
-    private Button btnEnfermeiro;
-
-    @FXML
     private Button btnEnfermidade;
 
     @FXML
@@ -32,19 +29,7 @@ public class DashController extends Main{
     private Button btnEntrada;
 
     @FXML
-    private Button btnFuncionario;
-
-    @FXML
-    private Button btnGerente;
-
-    @FXML
-    private Button btnMedico;
-
-    @FXML
     private Button btnPaciente;
-
-    @FXML
-    private Button btnPessoa;
 
     @FXML
     void administradorController(ActionEvent event) throws IOException {
@@ -52,58 +37,33 @@ public class DashController extends Main{
     }
 
     @FXML
-    void atendenteController(ActionEvent event) {
-
+    void atendenteController(ActionEvent event) throws IOException {
+    	openpage(Rotas.ATENDENTE);
     }
 
     @FXML
-    void atendimentoController(ActionEvent event) {
-
+    void atendimentoController(ActionEvent event) throws IOException {
+    	openpage(Rotas.ATENDIMENTO);
     }
 
     @FXML
-    void enfermeiroController(ActionEvent event) {
-
+    void enfermidadeController(ActionEvent event) throws IOException {
+    	openpage(Rotas.ENFERMIDADE);
     }
 
     @FXML
-    void enfermidadeController(ActionEvent event) {
-
+    void enfermidadePessoalController(ActionEvent event) throws IOException {
+    	openpage(Rotas.ENFERMIDADE_PESSOAL);
     }
 
     @FXML
-    void enfermidadePessoalController(ActionEvent event) {
-
+    void entradaController(ActionEvent event) throws IOException {
+    	openpage(Rotas.ENTRADA);
     }
 
     @FXML
-    void entradaController(ActionEvent event) {
-
-    }
-
-    @FXML
-    void funcionarioController(ActionEvent event) {
-
-    }
-
-    @FXML
-    void gerenteController(ActionEvent event) {
-
-    }
-
-    @FXML
-    void medicoController(ActionEvent event) {
-
-    }
-
-    @FXML
-    void pacienteController(ActionEvent event) {
-
-    }
-
-    @FXML
-    void pessoaController(ActionEvent event) {
-
+    void pacienteController(ActionEvent event) throws IOException {
+    	openpage(Rotas.PACIENTE);
     }
 
 }

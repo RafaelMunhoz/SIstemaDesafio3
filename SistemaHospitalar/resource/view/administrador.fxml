@@ -25,28 +25,28 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnCadastrarGerente" mnemonicParsing="false" onAction="#cadastrarGerente" prefHeight="30.0" prefWidth="165.0" text="Cadastrar Gerente">
+            <Button fx:id="btnCadastrarGerente" mnemonicParsing="false" onAction="#cadastrarGerente" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #F0F8FF;" text="+Cadastrar Gerente">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadastrarAtendente" mnemonicParsing="false" onAction="#cadastrarAtendente" prefHeight="30.0" prefWidth="165.0" text="Cadastrar Atendente" GridPane.columnIndex="1">
+            <Button fx:id="btnCadastrarAtendente" mnemonicParsing="false" onAction="#cadastrarAtendente" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #F0F8FF;" text="+Cadastrar Atendente" GridPane.columnIndex="1">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadastrarEnfermeiro" mnemonicParsing="false" onAction="#cadastrarEnfermeiro" prefHeight="30.0" prefWidth="165.0" text="Cadastrar Enfermeiro" GridPane.rowIndex="1">
+            <Button fx:id="btnCadastrarEnfermeiro" mnemonicParsing="false" onAction="#cadastrarEnfermeiro" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #F0F8FF;" text="+Cadastrar Enfermeiro" GridPane.rowIndex="1">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadastrarMedico" mnemonicParsing="false" onAction="#cadastrarMedico" prefHeight="30.0" prefWidth="165.0" text="Cadastrar Medico" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="btnCadastrarMedico" mnemonicParsing="false" onAction="#cadastrarMedico" prefHeight="30.0" prefWidth="165.0" style="-fx-background-color: #F0F8FF;" text="+Cadastrar Medico" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
          </children>
       </GridPane>
-      <Button fx:id="btnVoltar" layoutX="384.0" layoutY="333.0" mnemonicParsing="false" onAction="#voltar" prefHeight="30.0" prefWidth="67.0" text="Voltar" />
+      <Button fx:id="btnVoltar" layoutX="384.0" layoutY="334.0" mnemonicParsing="false" onAction="#voltar" prefHeight="30.0" prefWidth="67.0" style="-fx-background-color: #E6E6FA;" text="Voltar" />
    </children>
 </Pane>
