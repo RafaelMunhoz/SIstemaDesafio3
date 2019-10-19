@@ -12,57 +12,64 @@ import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.GridPane;
 
 public class MedicoController extends Main{
 
-    @FXML
-    private TextField txtNumeroDeRegistro;
+	   @FXML
+	    private GridPane cboSexo;
+
+	    @FXML
+	    private TextField txtNumeroDeRegistro;
+
+	    @FXML
+	    private TextField txtEspecialidade;
+
+	    @FXML
+	    private TextField txtNome;
+
+	    @FXML
+	    private TextField txtCPF;
+
+	    @FXML
+	    private TextField txtIdade;
+
+	    @FXML
+	    private TextField txtTipoSanguineo;
+
+	    @FXML
+	    private TextField txtStatusPessoa;
+
+	    @FXML
+	    private TextField txtLogin;
+
+	    @FXML
+	    private TextField txtSenha;
+
+	    @FXML
+	    private TextField txtStatusDeUsuario;
+
+	    @FXML
+	    private ToggleGroup sexo;
+
+	    @FXML
+	    private Button btnSalvar;
+
+	    @FXML
+	    private Button btnVoltar;
 
     @FXML
-    private TextField txtEspecialidade;
-
-    @FXML
-    private TextField txtNome;
-
-    @FXML
-    private TextField txtCPF;
-
-    @FXML
-    private TextField txtIdade;
-
-    @FXML
-    private TextField txtTipoSanguineo;
-
-    @FXML
-    private TextField txtSexo;
-
-    @FXML
-    private TextField txtStatusPessoa;
-
-    @FXML
-    private TextField txtLogin;
-
-    @FXML
-    private TextField txtSenha;
-
-    @FXML
-    private TextField txtStatusDeUsuario;
-
-    @FXML
-    private Button btnSalvar;
-
-    @FXML
-    private Button btnVoltar;
-
-    @FXML
-    void salvar(ActionEvent event) throws SQLException {
+    void salvar(ActionEvent event) throws SQLException {		
     	//Pessoa
+    	RadioButton radio = (RadioButton) sexo.getSelectedToggle();
     	String nome = new String(txtNome.getText());
     	String cpf = new String(txtCPF.getText());
     	Integer idade = new Integer(Integer.parseInt(txtIdade.getText()));
     	String tipoSanguineo = new String(txtTipoSanguineo.getText());
-    	String sexo = new String(txtSexo.getText());
+    	String sexo = new String(radio.getText());
     	String statusPessoa = new String(txtStatusPessoa.getText());
     	Pessoa p = new Pessoa();
     	p.setNome(nome);

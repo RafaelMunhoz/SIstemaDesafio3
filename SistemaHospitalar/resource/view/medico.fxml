@@ -2,7 +2,9 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -102,11 +104,22 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtSexo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <RadioButton mnemonicParsing="false" selected="true" text="Masculino" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <toggleGroup>
+                  <ToggleGroup fx:id="sexo" />
+               </toggleGroup>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </RadioButton>
          </children>
       </GridPane>
       <Button fx:id="btnSalvar" layoutX="341.0" layoutY="528.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="60.0" text="Salvar" />
       <Button fx:id="btnVoltar" layoutX="416.0" layoutY="528.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="60.0" text="Voltar" />
+      <RadioButton layoutX="519.0" layoutY="260.0" mnemonicParsing="false" text="Feminino" textFill="WHITE" toggleGroup="$sexo">
+         <font>
+            <Font size="18.0" />
+         </font></RadioButton>
    </children>
    <effect>
       <DropShadow />

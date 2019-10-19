@@ -26,8 +26,8 @@ public class AdministradorController extends Main{
     private Button btnVoltar;
 
     @FXML
-    void cadastrarAtendente(ActionEvent event) {
-    	
+    void cadastrarAtendente(ActionEvent event) throws IOException {
+    	openpage(Rotas.ATENDENTE);
     }
 
     @FXML

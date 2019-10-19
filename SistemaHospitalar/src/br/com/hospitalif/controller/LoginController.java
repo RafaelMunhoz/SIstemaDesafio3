@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class LoginController extends Main {
 
@@ -56,10 +57,11 @@ public class LoginController extends Main {
 		} else if (usuario.equals(user) && senha.equals(pass)) {
 			openpage(Rotas.DASH);
 		} else {
-			Alert msg = new Alert(Alert.AlertType.INFORMATION);
-			msg.setHeaderText("Alerta");
-			msg.setContentText("Login ou senha incorreto");
-			msg.show();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Erro");
+			alert.setHeaderText("Oops");
+			alert.setContentText("Login ou senha incorreto!");
+			alert.show();
 		}
 	}
 }

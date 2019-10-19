@@ -11,12 +11,13 @@ import br.com.hospitalif.model.Pessoa;
 import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ToggleGroup;
 
-public class EnfermeiroController extends Main{
+
+public class EnfermeiroController extends Main {
 
 	@FXML
 	private TextField txtNumeroDeRegistro;
@@ -34,9 +35,6 @@ public class EnfermeiroController extends Main{
 	private TextField txtTipoSanguineo;
 
 	@FXML
-	private TextField txtSexo;
-
-	@FXML
 	private TextField txtStatusPessoa;
 
 	@FXML
@@ -49,6 +47,9 @@ public class EnfermeiroController extends Main{
 	private TextField txtStatusDeUsuario;
 
 	@FXML
+	private ToggleGroup sexo;
+
+	@FXML
 	private Button btnSalvar;
 
 	@FXML
@@ -56,13 +57,14 @@ public class EnfermeiroController extends Main{
 
 	@FXML
 	void salvar(ActionEvent event) throws SQLException {
+		RadioButton radio = (RadioButton) sexo.getSelectedToggle();
 		// Pessoa
 		Pessoa p = new Pessoa();
 		p.setNome(txtNome.getText());
 		p.setCpf(txtCPF.getText());
 		p.setIdade(Integer.parseInt(txtIdade.getText()));
 		p.setTipoSanguineo(txtTipoSanguineo.getText());
-		p.setSexo(txtSexo.getText());
+		p.setSexo(radio.getText());
 		p.setStatusDaPessoa(txtStatusPessoa.getText());
 		// Funcionario
 		Funcionario f = new Funcionario();
@@ -72,16 +74,11 @@ public class EnfermeiroController extends Main{
 		// Enfermeiro
 		Enfermeiro e = new Enfermeiro();
 		e.setNumeroderegistro(Integer.parseInt(txtNumeroDeRegistro.getText()));
-		//DAO 
+		// DAO
 		EnfermeiroDAO eDAO = new EnfermeiroDAO();
 		eDAO.save(p, f, e);
-		
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Informação");
-		alert.setHeaderText("Cabeçalho");
-		alert.setContentText("Conteúdo!");
 
-		alert.show();
+		
 	}
 
 	@FXML

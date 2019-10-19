@@ -2,7 +2,9 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
@@ -55,7 +57,6 @@
             <TextField fx:id="txtCPF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtIdade" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="txtTipoSanguineo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="txtSexo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="txtStatusPessoa" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <TextField fx:id="txtLogin" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <TextField fx:id="txtSenha" GridPane.columnIndex="1" GridPane.rowIndex="7" />
@@ -95,9 +96,22 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <RadioButton mnemonicParsing="false" selected="true" text="Masculino" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="sexo" />
+               </toggleGroup>
+            </RadioButton>
          </children>
       </GridPane>
       <Button fx:id="btnSalvar" layoutX="341.0" layoutY="528.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="60.0" text="Salvar" />
       <Button fx:id="btnVoltar" layoutX="416.0" layoutY="528.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="60.0" text="Voltar" />
+      <RadioButton layoutX="511.0" layoutY="263.0" mnemonicParsing="false" text="Feminino" textFill="WHITE" toggleGroup="$sexo">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
    </children>
 </Pane>

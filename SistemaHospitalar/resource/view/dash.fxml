@@ -36,12 +36,7 @@
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="btnEnfermeiro" mnemonicParsing="false" onAction="#enfermeiroController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Enfermeiro" textFill="#222020">
-               <font>
-                  <Font name="Arial" size="15.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnEnfermidade" mnemonicParsing="false" onAction="#enfermidadeController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Enfermidade" textFill="#222020">
+            <Button fx:id="btnEnfermidade" mnemonicParsing="false" onAction="#enfermidadeController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Enfermidade" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
@@ -56,27 +51,7 @@
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="btnFuncionario" mnemonicParsing="false" onAction="#funcionarioController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Funcionário" textFill="#222020">
-               <font>
-                  <Font name="Arial" size="15.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnGerente" mnemonicParsing="false" onAction="#gerenteController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Gerente " textFill="#222020">
-               <font>
-                  <Font name="Arial" size="15.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnMedico" mnemonicParsing="false" onAction="#medicoController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Médico" textFill="#222020">
-               <font>
-                  <Font name="Arial" size="15.0" />
-               </font>
-            </Button>
             <Button fx:id="btnPaciente" mnemonicParsing="false" onAction="#pacienteController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Paciente" textFill="#222020">
-               <font>
-                  <Font name="Arial" size="15.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnPessoa" mnemonicParsing="false" onAction="#pessoaController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #00B2EE;" text="Pessoa" textFill="#222020">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
