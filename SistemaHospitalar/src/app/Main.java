@@ -19,7 +19,7 @@ public class Main extends Application {
 public void start(Stage stage) throws Exception {
 		stageAtual = stage;
 		openpage(Rotas.DASH);
-		
+
 
 //		loader = new FXMLLoader(getClass().getResource(Rotas.PESSOA));  -- Codigo grande virou método openpage 
 //		Parent root = loader.load();

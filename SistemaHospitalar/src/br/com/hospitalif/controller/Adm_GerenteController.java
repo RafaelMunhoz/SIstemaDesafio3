@@ -14,7 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class GerenteController extends Main{
+public class Adm_GerenteController extends Main{
 
     @FXML
     private Button btnSalvar;

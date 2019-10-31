@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 
-public class MedicoController extends Main{
+public class Adm_MedicoController extends Main{
 
 	   @FXML
 	    private GridPane cboSexo;

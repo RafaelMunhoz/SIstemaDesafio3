@@ -51,11 +51,6 @@
                   <Font name="Arial" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="btnPaciente" mnemonicParsing="false" onAction="#pacienteController" prefHeight="35.0" prefWidth="175.0" style="-fx-background-color: #009ACD;" text="Paciente" textFill="#222020">
-               <font>
-                  <Font name="Arial" size="15.0" />
-               </font>
-            </Button>
          </children>
          <effect>
             <DropShadow />
