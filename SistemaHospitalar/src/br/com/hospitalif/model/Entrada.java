@@ -7,7 +7,7 @@ public class Entrada {
 	private Date dataEntrada;
 	private Date dataSaida;
 	private String statusDeEntrada;
-	private Atendimento situacaoDePaciente;
+	private String situacaoDePaciente;
 
 	public Integer getIdEntrada() {
 		return idEntrada;
@@ -41,11 +41,11 @@ public class Entrada {
 		this.statusDeEntrada = statusDeEntrada;
 	}
 
-	public Atendimento getSituacaoDePaciente() {
+	public String getSituacaoDePaciente() {
 		return situacaoDePaciente;
 	}
 
-	public void setSituacaoDePaciente(Atendimento situacaoDePaciente) {
+	public void setSituacaoDePaciente(String situacaoDePaciente) {
 		this.situacaoDePaciente = situacaoDePaciente;
 	}
 }

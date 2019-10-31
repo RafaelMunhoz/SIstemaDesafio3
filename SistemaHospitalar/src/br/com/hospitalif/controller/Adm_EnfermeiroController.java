@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 
-public class EnfermeiroController extends Main {
+public class Adm_EnfermeiroController extends Main {
 
 	@FXML
 	private TextField txtNumeroDeRegistro;

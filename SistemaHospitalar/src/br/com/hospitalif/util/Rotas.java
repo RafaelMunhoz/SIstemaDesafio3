@@ -3,6 +3,7 @@ package br.com.hospitalif.util;
 public class Rotas {
 	public static String DASH = "/view/dash.fxml";
 	public static String ADMINISTRADOR = "/view/administrador.fxml";
+	public static String ADM_ATENDENTE = "/view/adm_atendente.fxml";
 	public static String ATENDENTE = "/view/atendente.fxml";
 	public static String ATENDIMENTO = "/view/atendimento.fxml";
 	public static String ENFERMEIRO = "/view/enfermeiro.fxml";
@@ -15,6 +16,5 @@ public class Rotas {
 	public static String MEDICO = "/view/medico.fxml";
 	public static String PACIENTE = "/view/paciente.fxml";
 	public static String PESSOA = "/view/pessoa.fxml";
-	public static String ADM_ATENDENTE = "/view/adm_atendente.fxml";
-	
+	public static String ATENDENTE_PACIENTE = "/view/atendente_paciente.fxml";
 }

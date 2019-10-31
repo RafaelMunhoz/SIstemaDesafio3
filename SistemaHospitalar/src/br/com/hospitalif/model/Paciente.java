@@ -2,8 +2,8 @@ package br.com.hospitalif.model;
 
 public class Paciente {
 	private Integer idPaciente;
-	private EnfermidadePessoal doenca;
-	private Entrada historico;
+	private String doenca;
+	private String historico;
 
 	public Integer getIdPaciente() {
 		return idPaciente;
@@ -13,19 +13,19 @@ public class Paciente {
 		this.idPaciente = idPaciente;
 	}
 
-	public EnfermidadePessoal getDoenca() {
+	public String getDoenca() {
 		return doenca;
 	}
 
-	public void setDoenca(EnfermidadePessoal doenca) {
+	public void setDoenca(String doenca) {
 		this.doenca = doenca;
 	}
 
-	public Entrada getHistorico() {
+	public String getHistorico() {
 		return historico;
 	}
 
-	public void setHistorico(Entrada historico) {
+	public void setHistorico(String historico) {
 		this.historico = historico;
 	}
 }
