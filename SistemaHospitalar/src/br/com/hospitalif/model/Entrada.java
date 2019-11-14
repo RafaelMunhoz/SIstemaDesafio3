@@ -1,11 +1,11 @@
 package br.com.hospitalif.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Entrada {
 	private Integer idEntrada;
-	private Date dataEntrada;
-	private Date dataSaida;
+	private LocalDate dataEntrada;
+	private LocalDate dataSaida;
 	private String statusDeEntrada;
 	private String situacaoDePaciente;
 
@@ -17,19 +17,19 @@ public class Entrada {
 		this.idEntrada = idEntrada;
 	}
 
-	public Date getDataEntrada() {
+	public LocalDate getDataEntrada() {
 		return dataEntrada;
 	}
 
-	public void setDataEntrada(Date dataEntrada) {
+	public void setDataEntrada(LocalDate dataEntrada) {
 		this.dataEntrada = dataEntrada;
 	}
 
-	public Date getDataSaida() {
+	public LocalDate getDataSaida() {
 		return dataSaida;
 	}
 
-	public void setDataSaida(Date dataSaida) {
+	public void setDataSaida(LocalDate dataSaida) {
 		this.dataSaida = dataSaida;
 	}
 

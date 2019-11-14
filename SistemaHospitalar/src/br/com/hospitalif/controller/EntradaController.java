@@ -1,9 +1,11 @@
 package br.com.hospitalif.controller;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.sql.SQLException;
 
 import app.Main;
+import br.com.hospitalif.DAO.EntradaDAO;
+import br.com.hospitalif.model.Entrada;
 import br.com.hospitalif.util.Rotas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,13 +34,14 @@ public class EntradaController extends Main{
     private TextField txtStatusDeEntrada;
 
     @FXML
-    void salvar(ActionEvent event) {
-    	LocalDate localDateEntrada = pckDataEntrada.getValue();
-    	LocalDate localDateSaida = pckDataSaida.getValue();
-    	String situacaoDoPaciente = txtSituacaoDoPaciente.getText();
-    	String statusDeEntrada = txtStatusDeEntrada.getText();   
-    	System.out.println(localDateEntrada + " " + localDateSaida + " " + statusDeEntrada + " " + situacaoDoPaciente);
-    	
+    void salvar(ActionEvent event) throws SQLException {
+    	Entrada e = new Entrada();
+    	e.setDataEntrada(pckDataEntrada.getValue());
+    	e.setDataSaida(pckDataSaida.getValue());
+    	e.setStatusDeEntrada(txtStatusDeEntrada.getText());
+    	e.setSituacaoDePaciente(txtSituacaoDoPaciente.getText());
+    	EntradaDAO eDAO = new EntradaDAO();
+    	eDAO.save(e);
     }
 
     @FXML
