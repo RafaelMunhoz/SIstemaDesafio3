@@ -1,9 +1,10 @@
 package br.com.hospitalif.model;
 
-public class Medico extends Funcionario {
+public class Medico extends Funcionario{
 	private Integer numeroderegistro;
 	private String especialidade;
-
+	
+	
 	public Integer getNumeroderegistro() {
 		return numeroderegistro;
 	}

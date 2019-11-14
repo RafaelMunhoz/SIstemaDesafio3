@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.hospitalif.conexao.Conexao;
 import br.com.hospitalif.model.Funcionario;
@@ -26,12 +28,12 @@ public class MedicoDAO {
 		stmtPessoa.setString(4, p.getTipoSanguineo());
 		stmtPessoa.setString(5, p.getSexo());
 		stmtPessoa.setString(6, p.getStatusDaPessoa());
-		stmtPessoa.execute();
-		// Consulta para buscar id
+		stmtPessoa.execute();		
+		
+		// Consulta para buscar idPessoa
 		sqlPessoa = "select idPessoa from pessoa where cpf = " + p.getCpf();
 		stmtPessoa = conexao.prepareStatement(sqlPessoa);
 		ResultSet rs = stmtPessoa.executeQuery(sqlPessoa);
-
 		if (rs.next()) {
 			p.setIdPessoa(rs.getInt(1));
 		}
@@ -66,29 +68,66 @@ public class MedicoDAO {
 		stmt.execute();
 	}
 
+	public List<Medico> select() {
+		List<Medico> ListaMedicos = new ArrayList<Medico>();
+		try {
+			Conexao conn = new Conexao();
+			Connection conexao = conn.getConnection();
+
+			String sqlPessoa = "SELECT * FROM pessoa";
+			PreparedStatement stmtPessoa = conexao.prepareStatement(sqlPessoa);
+			ResultSet rsPessoa = stmtPessoa.executeQuery();
+			
+			String sqlFuncionario = "SELECT * FROM funcionario";
+			PreparedStatement stmtFuncionario = conexao.prepareStatement(sqlFuncionario);
+			ResultSet rsFuncionario = stmtFuncionario.executeQuery();
+
+			String sqlMedico = "SELECT * FROM medico";
+			PreparedStatement stmtMedico = conexao.prepareStatement(sqlMedico);
+			ResultSet rsMedico = stmtMedico.executeQuery();
+
+			while (rsMedico.next() && rsPessoa.next() && rsFuncionario.next()) {
+				Medico m1 = new Medico();
+				m1.setNome(rsPessoa.getString("nome"));
+				m1.setCpf(rsPessoa.getString("cpf"));
+				m1.setIdade(rsPessoa.getInt("idade"));
+				m1.setTipoSanguineo(rsPessoa.getString("tipoSanguineo"));
+				m1.setSexo(rsPessoa.getString("sexo"));
+				m1.setStatusDaPessoa(rsPessoa.getString("statusPessoa"));
+				m1.setLogin(rsFuncionario.getString("login"));
+				m1.setSenha(rsFuncionario.getString("senha"));
+				m1.setStatusDeUsuario(rsFuncionario.getString("statusDeUsuario"));
+				m1.setNumeroderegistro(rsMedico.getInt("numeroRegistro"));
+				m1.setEspecialidade(rsMedico.getString("especialidade"));
+				ListaMedicos.add(m1);
+			}
+		} catch (SQLException e) {
+			// TODO: handle exception
+		}
+		return ListaMedicos;
+	}
+
 	public void removeById(int id) throws SQLException {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
-		
-		
-		//Consulta para buscar id de funcionario
+
+		// Consulta para buscar id de funcionario
 		Funcionario f = new Funcionario();
-		
-		String sqlSELECT = "select m.idFuncionario from medico m, funcionario f "
-				+ "where m.idMedico = " + id + " and f.idFuncionario";
+
+		String sqlSELECT = "select m.idFuncionario from medico m, funcionario f " + "where m.idMedico = " + id
+				+ " and f.idFuncionario";
 		PreparedStatement stmt = conexao.prepareStatement(sqlSELECT);
 		ResultSet rs = stmt.executeQuery(sqlSELECT);
-		
+
 		if (rs.next()) {
 			f.setIdFuncionario(rs.getInt(1));
 		}
 		stmt.close();
-		
-		//Deletar registro
+
+		// Deletar registro
 		String sqlDelete = "DELETE FROM medico WHERE id=(?)";
 		stmt = conexao.prepareStatement(sqlDelete);
 		stmt.setInt(1, id);
 		stmt.execute();
 	}
-
 }

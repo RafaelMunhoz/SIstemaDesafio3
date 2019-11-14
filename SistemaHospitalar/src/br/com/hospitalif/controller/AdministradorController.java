@@ -32,7 +32,7 @@ public class AdministradorController extends Main{
 
     @FXML
     void cadastrarEnfermeiro(ActionEvent event) throws IOException {
-    	openpage(Rotas.ENFERMEIRO);
+    	openpage(Rotas.ADM_ENFERMEIRO);
     }
 
     @FXML
@@ -42,7 +42,7 @@ public class AdministradorController extends Main{
 
     @FXML
     void cadastrarMedico(ActionEvent event) throws IOException {
-    	openpage(Rotas.MEDICO);
+    	openpage(Rotas.ADM_MEDICO);
     }
 
     @FXML

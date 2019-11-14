@@ -16,10 +16,10 @@ public class Main extends Application {
 	static FXMLLoader loader;
 
 	@Override
-public void start(Stage stage) throws Exception {
+	public void start(Stage stage) throws Exception {
 		stageAtual = stage;
 		openpage(Rotas.DASH);
-//		loader = new FXMLLoader(getClass().getResource(Rotas.PESSOA));  -- Código grande virou método openpage 
+//		loader = new FXMLLoader(getClass().getResource(Rotas.PESSOA));  -- Codigo grande virou método openpage 
 //		Parent root = loader.load();
 //		Scene scene = new Scene(root, 600, 450);
 //		scene.getStylesheets().add(getClass().getResource("/css/app.css").toExternalForm());

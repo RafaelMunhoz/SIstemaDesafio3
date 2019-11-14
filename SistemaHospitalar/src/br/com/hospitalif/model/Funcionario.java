@@ -1,10 +1,11 @@
 package br.com.hospitalif.model;
 
-public class Funcionario {
+public class Funcionario extends Pessoa{
 	private Integer idFuncionario;
 	private String login;
 	private String senha;
 	private String statusDeUsuario;
+	
 	public Integer getIdFuncionario() {
 		return idFuncionario;
 	}

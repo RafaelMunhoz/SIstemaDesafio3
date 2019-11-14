@@ -1,6 +1,5 @@
 package br.com.hospitalif.model;
 
-
 import java.time.LocalDate;
 
 public class Atendimento {

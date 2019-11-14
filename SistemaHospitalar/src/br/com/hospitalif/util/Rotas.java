@@ -4,9 +4,10 @@ public class Rotas {
 	public static String DASH = "/view/dash.fxml";
 	public static String ADMINISTRADOR = "/view/administrador.fxml";
 	public static String ADM_ATENDENTE = "/view/adm_atendente.fxml";
+	public static String ADM_MEDICO = "/view/adm_medico.fxml";
+	public static String ADM_ENFERMEIRO = "/view/adm_enfermeiro.fxml";
 	public static String ATENDENTE = "/view/atendente.fxml";
 	public static String ATENDIMENTO = "/view/atendimento.fxml";
-	public static String ENFERMEIRO = "/view/adm_enfermeiro.fxml";
 	public static String ENFERMIDADE = "/view/enfermidade.fxml";
 	public static String ENFERMIDADE_PESSOAL = "/view/enfermidadePessoal.fxml";
 	public static String ENTRADA = "/view/entrada.fxml";

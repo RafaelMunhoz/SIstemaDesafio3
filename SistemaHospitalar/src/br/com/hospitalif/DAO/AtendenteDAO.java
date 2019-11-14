@@ -59,9 +59,10 @@ public class AtendenteDAO {
 		stmtFuncionario.close();
 
 		// Atendente
-		String sqlAtendente = "INSERT INTO atendente(cargo) values(?)";
+		String sqlAtendente = "INSERT INTO atendente(cargo, idFuncionario) values(?, ?)";
 		PreparedStatement stmtEnfermeiro = conexao.prepareStatement(sqlAtendente);
 		stmtEnfermeiro.setString(1, a.getCargo());
+		stmtEnfermeiro.setInt(2, f.getIdFuncionario());
 		stmtEnfermeiro.execute();
 		stmtEnfermeiro.close();
 	}
