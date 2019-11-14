@@ -54,10 +54,10 @@ public class Adm_MedicoController extends Main implements Initializable {
 
 	@FXML
 	private TextField txtStatusDeUsuario;
-	
+
 	@FXML
 	private TextField txtEspecialidade;
-	
+
 	@FXML
 	private ToggleGroup sexo;
 
@@ -74,7 +74,10 @@ public class Adm_MedicoController extends Main implements Initializable {
 	private Button btnVoltar;
 
 	@FXML
-	private Button btnTeste;
+	private Button btnEditar;
+
+	@FXML
+	private Button btnSalvarEdicao;
 
 	@FXML
 	private TableView<Medico> listaMedico;
@@ -114,8 +117,6 @@ public class Adm_MedicoController extends Main implements Initializable {
 
 	@FXML
 	void salvar(ActionEvent event) throws SQLException, IOException {
-		// Setters
-		// Pessoa
 		RadioButton radio = (RadioButton) sexo.getSelectedToggle();
 		String nome = new String(txtNome.getText());
 		String cpf = new String(txtCPF.getText());
@@ -130,7 +131,7 @@ public class Adm_MedicoController extends Main implements Initializable {
 		p.setTipoSanguineo(tipoSanguineo);
 		p.setSexo(sexo);
 		p.setStatusDaPessoa(statusPessoa);
-		// Funcionario
+		
 		String login = new String(txtLogin.getText());
 		String senha = new String(txtSenha.getText());
 		String statusDeUsuario = new String(txtStatusDeUsuario.getText());
@@ -138,15 +139,15 @@ public class Adm_MedicoController extends Main implements Initializable {
 		f.setLogin(login);
 		f.setSenha(senha);
 		f.setStatusDeUsuario(statusDeUsuario);
-		// Medico
+		
 		Integer numeroDeRegistro = new Integer(txtNumeroDeRegistro.getText());
 		String especialidade = new String(txtEspecialidade.getText());
 		Medico m = new Medico();
 		m.setNumeroderegistro(numeroDeRegistro);
 		m.setEspecialidade(especialidade);
-		// Instância de classe Medico_Data_Access_Object
+
 		MedicoDAO medicoDAO = new MedicoDAO();
-		medicoDAO.save(p, f, m);// -> Salva Médico no banco
+		medicoDAO.save(p, f, m);
 		// MSG
 		Alert msg = new Alert(Alert.AlertType.INFORMATION);
 		msg.setTitle("Mensagem!");
@@ -157,7 +158,7 @@ public class Adm_MedicoController extends Main implements Initializable {
 	}
 
 	@FXML
-	void teste(ActionEvent event) {
+	void editar(ActionEvent event) {
 		try {
 			txtNome.setText(listaMedico.getSelectionModel().getSelectedItem().getNome());
 			txtCPF.setText(listaMedico.getSelectionModel().getSelectedItem().getCpf());
@@ -168,13 +169,14 @@ public class Adm_MedicoController extends Main implements Initializable {
 			txtSenha.setText(listaMedico.getSelectionModel().getSelectedItem().getSenha());
 			txtStatusDeUsuario.setText(listaMedico.getSelectionModel().getSelectedItem().getStatusDeUsuario());
 			txtEspecialidade.setText(listaMedico.getSelectionModel().getSelectedItem().getEspecialidade());
-			txtNumeroDeRegistro.setText(String.valueOf(listaMedico.getSelectionModel().getSelectedItem().getNumeroderegistro()));
+			txtNumeroDeRegistro
+					.setText(String.valueOf(listaMedico.getSelectionModel().getSelectedItem().getNumeroderegistro()));
 			String sexoSelecionado = (listaMedico.getSelectionModel().getSelectedItem().getSexo());
-			if(sexoSelecionado.equals("Masculino")) {
+			if (sexoSelecionado.equals("Masculino")) {
 				masculino.setSelected(true);
-			} else if(sexoSelecionado.equals("Feminino")) {
+			} else if (sexoSelecionado.equals("Feminino")) {
 				feminino.setSelected(true);
-							}
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			Alert msg = new Alert(Alert.AlertType.WARNING);
@@ -183,6 +185,41 @@ public class Adm_MedicoController extends Main implements Initializable {
 			msg.setContentText("Selecione um item da tabela para prosseguir");
 			msg.show();
 		}
+	}
+
+	@FXML
+	void salvarEdicao(ActionEvent event) throws SQLException {
+		RadioButton radio = (RadioButton) sexo.getSelectedToggle();
+		String nome = new String(txtNome.getText());
+		String cpf = new String(txtCPF.getText());
+		Integer idade = new Integer(Integer.parseInt(txtIdade.getText()));
+		String tipoSanguineo = new String(txtTipoSanguineo.getText());
+		String sexo = new String(radio.getText());
+		String statusPessoa = new String(txtStatusPessoa.getText());
+		Pessoa p = new Pessoa();
+		p.setNome(nome);
+		p.setCpf(cpf);
+		p.setIdade(idade);
+		p.setTipoSanguineo(tipoSanguineo);
+		p.setSexo(sexo);
+		p.setStatusDaPessoa(statusPessoa);
+		
+		String login = new String(txtLogin.getText());
+		String senha = new String(txtSenha.getText());
+		String statusDeUsuario = new String(txtStatusDeUsuario.getText());
+		Funcionario f = new Funcionario();
+		f.setLogin(login);
+		f.setSenha(senha);
+		f.setStatusDeUsuario(statusDeUsuario);
+		
+		Integer numeroDeRegistro = new Integer(txtNumeroDeRegistro.getText());
+		String especialidade = new String(txtEspecialidade.getText());
+		Medico m = new Medico();
+		m.setNumeroderegistro(numeroDeRegistro);
+		m.setEspecialidade(especialidade);
+
+		MedicoDAO mDAO = new MedicoDAO();
+		mDAO.salvarEdicao(p, f, m);
 	}
 
 	@FXML

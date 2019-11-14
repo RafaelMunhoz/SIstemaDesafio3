@@ -18,7 +18,6 @@ public class MedicoDAO {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
 
-		// Inserindo Pessoa
 		String sqlPessoa = "INSERT INTO pessoa (nome,cpf,idade,"
 				+ "tipoSanguineo,sexo,statusPessoa) VALUES(?,?,?,?,?,?)";
 		PreparedStatement stmtPessoa = conexao.prepareStatement(sqlPessoa);
@@ -28,9 +27,8 @@ public class MedicoDAO {
 		stmtPessoa.setString(4, p.getTipoSanguineo());
 		stmtPessoa.setString(5, p.getSexo());
 		stmtPessoa.setString(6, p.getStatusDaPessoa());
-		stmtPessoa.execute();		
-		
-		// Consulta para buscar idPessoa
+		stmtPessoa.execute();
+
 		sqlPessoa = "select idPessoa from pessoa where cpf = " + p.getCpf();
 		stmtPessoa = conexao.prepareStatement(sqlPessoa);
 		ResultSet rs = stmtPessoa.executeQuery(sqlPessoa);
@@ -39,7 +37,6 @@ public class MedicoDAO {
 		}
 		stmtPessoa.close();
 
-		// Inserindo Funcionario
 		String sqlFuncionario = "INSERT INTO funcionario (login, senha, statusDeUsuario, idPessoa)"
 				+ " VALUES(?,?,?,?)";
 		PreparedStatement stmtFuncionario = conexao.prepareStatement(sqlFuncionario);
@@ -49,7 +46,6 @@ public class MedicoDAO {
 		stmtFuncionario.setInt(4, p.getIdPessoa());
 		stmtFuncionario.execute();
 
-		// Consulta para buscar id
 		sqlFuncionario = "select idFuncionario from funcionario where idPessoa = " + p.getIdPessoa();
 		stmtFuncionario = conexao.prepareStatement(sqlFuncionario);
 		rs = stmtFuncionario.executeQuery(sqlFuncionario);
@@ -77,7 +73,7 @@ public class MedicoDAO {
 			String sqlPessoa = "SELECT * FROM pessoa";
 			PreparedStatement stmtPessoa = conexao.prepareStatement(sqlPessoa);
 			ResultSet rsPessoa = stmtPessoa.executeQuery();
-			
+
 			String sqlFuncionario = "SELECT * FROM funcionario";
 			PreparedStatement stmtFuncionario = conexao.prepareStatement(sqlFuncionario);
 			ResultSet rsFuncionario = stmtFuncionario.executeQuery();
@@ -107,6 +103,46 @@ public class MedicoDAO {
 		return ListaMedicos;
 	}
 
+	public void salvarEdicao(Pessoa p, Funcionario f, Medico m) throws SQLException {
+		Conexao conn = new Conexao();
+		Connection conexao = conn.getConnection();
+
+		String sql = "select * from pessoa where cpf =" + p.getCpf();
+		PreparedStatement stmt = conexao.prepareStatement(sql);
+		ResultSet rs = stmt.executeQuery(sql);
+		if (rs.next()) {
+			p.setIdPessoa(rs.getInt(1));
+		}
+		
+		String sqlUpdatePessoa = "update pessoa set nome = (?), cpf = (?), idade = (?), "
+				+ "tipoSanguineo = (?), sexo = (?), statusPessoa = (?) where idPessoa = " + p.getIdPessoa();
+		PreparedStatement stmtPessoa = conexao.prepareStatement(sqlUpdatePessoa);
+		stmtPessoa.setString(1, p.getNome());
+		stmtPessoa.setString(2, p.getCpf());
+		stmtPessoa.setInt(3, p.getIdade());
+		stmtPessoa.setString(4, p.getTipoSanguineo());
+		stmtPessoa.setString(5, p.getSexo());
+		stmtPessoa.setString(6, p.getStatusDaPessoa());
+		stmtPessoa.executeUpdate(sqlUpdatePessoa);
+
+		sql = "select * from funcionario where idPessoa =" + p.getIdPessoa();
+		stmt = conexao.prepareStatement(sql);
+		rs = stmt.executeQuery(sql);
+		if (rs.next()) {
+			f.setIdFuncionario(rs.getInt(1));
+		}
+		sql = "update funcionario set login = " + f.getLogin() + ", senha = " + f.getSenha() + ", statusDeUsuario = "
+				+ f.getStatusDeUsuario() + " where idFuncionario = " + f.getIdFuncionario();
+		stmt = conexao.prepareStatement(sql);
+		stmt.executeUpdate(sql);
+		
+		sql = "update medico set numeroRegistro = " + m.getNumeroderegistro() + ", especialidade = "
+				+ m.getEspecialidade() + " where idFuncionario =" + f.getIdFuncionario();
+		stmt = conexao.prepareStatement(sql);
+		stmt.executeUpdate(sql);
+		System.out.println("FOi!!!!!");
+	}
+
 	public void removeById(int id) throws SQLException {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
@@ -130,4 +166,5 @@ public class MedicoDAO {
 		stmt.setInt(1, id);
 		stmt.execute();
 	}
+
 }
