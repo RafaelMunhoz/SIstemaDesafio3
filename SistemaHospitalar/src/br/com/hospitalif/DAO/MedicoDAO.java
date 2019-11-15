@@ -115,7 +115,7 @@ public class MedicoDAO {
 		}
 		
 		String sqlUpdatePessoa = "update pessoa set nome = (?), cpf = (?), idade = (?), "
-				+ "tipoSanguineo = (?), sexo = (?), statusPessoa = (?) where idPessoa = " + p.getIdPessoa();
+				+ "tipoSanguineo = (?), sexo = (?), statusPessoa = (?) where idPessoa = (?)";
 		PreparedStatement stmtPessoa = conexao.prepareStatement(sqlUpdatePessoa);
 		stmtPessoa.setString(1, p.getNome());
 		stmtPessoa.setString(2, p.getCpf());
@@ -123,6 +123,7 @@ public class MedicoDAO {
 		stmtPessoa.setString(4, p.getTipoSanguineo());
 		stmtPessoa.setString(5, p.getSexo());
 		stmtPessoa.setString(6, p.getStatusDaPessoa());
+		stmtPessoa.setInt(7, p.getIdPessoa());
 		stmtPessoa.executeUpdate(sqlUpdatePessoa);
 
 		sql = "select * from funcionario where idPessoa =" + p.getIdPessoa();
