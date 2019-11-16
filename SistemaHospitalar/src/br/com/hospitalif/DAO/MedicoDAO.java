@@ -114,9 +114,8 @@ public class MedicoDAO {
 			p.setIdPessoa(rs.getInt(1));
 		}
 		
-		String sqlUpdatePessoa = "update pessoa set nome = (?), cpf = (?), idade = (?), "
-				+ "tipoSanguineo = (?), sexo = (?), statusPessoa = (?) where idPessoa = (?)";
-		PreparedStatement stmtPessoa = conexao.prepareStatement(sqlUpdatePessoa);
+		sql = "UPDATE pessoa SET nome = ?, cpf = ?, idade = ?, tipoSanguineo = ?, sexo = ?, statusPessoa = ? where idPessoa = ?";
+		PreparedStatement stmtPessoa = conexao.prepareStatement(sql);
 		stmtPessoa.setString(1, p.getNome());
 		stmtPessoa.setString(2, p.getCpf());
 		stmtPessoa.setInt(3, p.getIdade());
@@ -124,7 +123,7 @@ public class MedicoDAO {
 		stmtPessoa.setString(5, p.getSexo());
 		stmtPessoa.setString(6, p.getStatusDaPessoa());
 		stmtPessoa.setInt(7, p.getIdPessoa());
-		stmtPessoa.executeUpdate(sqlUpdatePessoa);
+		stmtPessoa.executeUpdate(sql);
 
 		sql = "select * from funcionario where idPessoa =" + p.getIdPessoa();
 		stmt = conexao.prepareStatement(sql);
@@ -132,16 +131,22 @@ public class MedicoDAO {
 		if (rs.next()) {
 			f.setIdFuncionario(rs.getInt(1));
 		}
-		sql = "update funcionario set login = " + f.getLogin() + ", senha = " + f.getSenha() + ", statusDeUsuario = "
-				+ f.getStatusDeUsuario() + " where idFuncionario = " + f.getIdFuncionario();
+		
+		sql = "update funcionario set login = (?), senha = (?), statusDeUsuario = (?) where idFuncionario = (?)";
 		stmt = conexao.prepareStatement(sql);
+		stmt.setString(1, f.getLogin());
+		stmt.setString(2, f.getSenha());
+		stmt.setString(3, f.getSenha());
+		stmt.setInt(4, f.getIdFuncionario());
 		stmt.executeUpdate(sql);
 		
-		sql = "update medico set numeroRegistro = " + m.getNumeroderegistro() + ", especialidade = "
-				+ m.getEspecialidade() + " where idFuncionario =" + f.getIdFuncionario();
+		sql = "update medico set numeroRegistro = (?), especialidade = (?) where idFuncionario =(?)";
 		stmt = conexao.prepareStatement(sql);
+		stmt.setInt(1, m.getNumeroderegistro());
+		stmt.setString(2, m.getEspecialidade());
+		stmt.setInt(3, f.getIdFuncionario());
 		stmt.executeUpdate(sql);
-		System.out.println("FOi!!!!!");
+		System.out.println("OOOOOOOOooooh Glóória!!!!!");
 	}
 
 	public void removeById(int id) throws SQLException {
