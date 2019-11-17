@@ -70,32 +70,36 @@ public class MedicoDAO {
 			Conexao conn = new Conexao();
 			Connection conexao = conn.getConnection();
 
-			String sqlPessoa = "SELECT * FROM pessoa";
-			PreparedStatement stmtPessoa = conexao.prepareStatement(sqlPessoa);
-			ResultSet rsPessoa = stmtPessoa.executeQuery();
-
-			String sqlFuncionario = "SELECT * FROM funcionario";
-			PreparedStatement stmtFuncionario = conexao.prepareStatement(sqlFuncionario);
-			ResultSet rsFuncionario = stmtFuncionario.executeQuery();
-
 			String sqlMedico = "SELECT * FROM medico";
 			PreparedStatement stmtMedico = conexao.prepareStatement(sqlMedico);
 			ResultSet rsMedico = stmtMedico.executeQuery();
-
-			while (rsMedico.next() && rsPessoa.next() && rsFuncionario.next()) {
-				Medico m1 = new Medico();
-				m1.setNome(rsPessoa.getString("nome"));
-				m1.setCpf(rsPessoa.getString("cpf"));
-				m1.setIdade(rsPessoa.getInt("idade"));
-				m1.setTipoSanguineo(rsPessoa.getString("tipoSanguineo"));
-				m1.setSexo(rsPessoa.getString("sexo"));
-				m1.setStatusDaPessoa(rsPessoa.getString("statusPessoa"));
-				m1.setLogin(rsFuncionario.getString("login"));
-				m1.setSenha(rsFuncionario.getString("senha"));
-				m1.setStatusDeUsuario(rsFuncionario.getString("statusDeUsuario"));
-				m1.setNumeroderegistro(rsMedico.getInt("numeroRegistro"));
-				m1.setEspecialidade(rsMedico.getString("especialidade"));
-				ListaMedicos.add(m1);
+			Medico m = new Medico();
+			if (rsMedico.next()) {
+				m.setIdFuncionario(rsMedico.getInt(4));
+				m.setEspecialidade(rsMedico.getString(3));
+				m.setNumeroderegistro(rsMedico.getInt(2));
+				m.setIdMedico(rsMedico.getInt(1));
+				String sqlFuncionario = "SELECT * FROM funcionario where idFuncionario = " + m.getIdFuncionario();
+				PreparedStatement stmtFuncionario = conexao.prepareStatement(sqlFuncionario);
+				ResultSet rsFuncionario = stmtFuncionario.executeQuery();
+				if (rsFuncionario.next()) {
+					m.setIdPessoa(rsFuncionario.getInt(5));
+					m.setStatusDeUsuario(rsFuncionario.getString(4));
+					m.setSenha(rsFuncionario.getString(3));
+					m.setLogin(rsFuncionario.getString(2));
+					String sqlPessoa = "SELECT * FROM pessoa where idPessoa = " + m.getIdPessoa();
+					PreparedStatement stmtPessoa = conexao.prepareStatement(sqlPessoa);
+					ResultSet rsPessoa= stmtPessoa.executeQuery();
+					if(rsPessoa.next()) {
+						m.setStatusDaPessoa(rsPessoa.getString(7));
+						m.setSexo(rsPessoa.getString(6));
+						m.setTipoSanguineo(rsPessoa.getString(5));
+						m.setIdade(rsPessoa.getInt(4));
+						m.setCpf(rsPessoa.getString(3));
+						m.setNome(rsPessoa.getString(2));
+						ListaMedicos.add(m);
+					}
+				}
 			}
 		} catch (SQLException e) {
 			// TODO: handle exception
@@ -113,17 +117,17 @@ public class MedicoDAO {
 		if (rs.next()) {
 			p.setIdPessoa(rs.getInt(1));
 		}
-		
+
 		sql = "UPDATE pessoa SET nome = ?, cpf = ?, idade = ?, tipoSanguineo = ?, sexo = ?, statusPessoa = ? where idPessoa = ?";
-		PreparedStatement stmtPessoa = conexao.prepareStatement(sql);
-		stmtPessoa.setString(1, p.getNome());
-		stmtPessoa.setString(2, p.getCpf());
-		stmtPessoa.setInt(3, p.getIdade());
-		stmtPessoa.setString(4, p.getTipoSanguineo());
-		stmtPessoa.setString(5, p.getSexo());
-		stmtPessoa.setString(6, p.getStatusDaPessoa());
-		stmtPessoa.setInt(7, p.getIdPessoa());
-		stmtPessoa.executeUpdate(sql);
+		stmt = conexao.prepareStatement(sql);
+		stmt.setString(1, p.getNome());
+		stmt.setString(2, p.getCpf());
+		stmt.setInt(3, p.getIdade());
+		stmt.setString(4, p.getTipoSanguineo());
+		stmt.setString(5, p.getSexo());
+		stmt.setString(6, p.getStatusDaPessoa());
+		stmt.setInt(7, p.getIdPessoa());
+		stmt.executeUpdate();
 
 		sql = "select * from funcionario where idPessoa =" + p.getIdPessoa();
 		stmt = conexao.prepareStatement(sql);
@@ -131,22 +135,21 @@ public class MedicoDAO {
 		if (rs.next()) {
 			f.setIdFuncionario(rs.getInt(1));
 		}
-		
+
 		sql = "update funcionario set login = (?), senha = (?), statusDeUsuario = (?) where idFuncionario = (?)";
 		stmt = conexao.prepareStatement(sql);
 		stmt.setString(1, f.getLogin());
 		stmt.setString(2, f.getSenha());
 		stmt.setString(3, f.getSenha());
 		stmt.setInt(4, f.getIdFuncionario());
-		stmt.executeUpdate(sql);
-		
+		stmt.executeUpdate();
+
 		sql = "update medico set numeroRegistro = (?), especialidade = (?) where idFuncionario =(?)";
 		stmt = conexao.prepareStatement(sql);
 		stmt.setInt(1, m.getNumeroderegistro());
 		stmt.setString(2, m.getEspecialidade());
 		stmt.setInt(3, f.getIdFuncionario());
-		stmt.executeUpdate(sql);
-		System.out.println("OOOOOOOOooooh Glóória!!!!!");
+		stmt.executeUpdate();
 	}
 
 	public void removeById(int id) throws SQLException {
