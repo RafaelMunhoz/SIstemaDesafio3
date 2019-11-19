@@ -245,6 +245,6 @@ public class Adm_MedicoController extends Main implements Initializable {
 		MedicoDAO mDAO = new MedicoDAO();
 		List<Medico> medico = mDAO.select();
 		ObservableList<Medico> obsm = FXCollections.observableArrayList(medico);
-		listaMedico.setItems(obsm);
+			listaMedico.setItems(obsm);
 	}
 }

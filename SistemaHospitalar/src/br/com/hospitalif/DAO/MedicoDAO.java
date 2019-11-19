@@ -70,36 +70,26 @@ public class MedicoDAO {
 			Conexao conn = new Conexao();
 			Connection conexao = conn.getConnection();
 
-			String sqlMedico = "SELECT * FROM medico";
+			String sqlMedico = "SELECT m.*, f.*, p.* FROM medico m, funcionario f, pessoa p where m.idFuncionario = f.idFuncionario and f.idPessoa = p.idPessoa";
 			PreparedStatement stmtMedico = conexao.prepareStatement(sqlMedico);
 			ResultSet rsMedico = stmtMedico.executeQuery();
 			Medico m = new Medico();
 			if (rsMedico.next()) {
-				m.setIdFuncionario(rsMedico.getInt(4));
-				m.setEspecialidade(rsMedico.getString(3));
-				m.setNumeroderegistro(rsMedico.getInt(2));
-				m.setIdMedico(rsMedico.getInt(1));
-				String sqlFuncionario = "SELECT * FROM funcionario where idFuncionario = " + m.getIdFuncionario();
-				PreparedStatement stmtFuncionario = conexao.prepareStatement(sqlFuncionario);
-				ResultSet rsFuncionario = stmtFuncionario.executeQuery();
-				if (rsFuncionario.next()) {
-					m.setIdPessoa(rsFuncionario.getInt(5));
-					m.setStatusDeUsuario(rsFuncionario.getString(4));
-					m.setSenha(rsFuncionario.getString(3));
-					m.setLogin(rsFuncionario.getString(2));
-					String sqlPessoa = "SELECT * FROM pessoa where idPessoa = " + m.getIdPessoa();
-					PreparedStatement stmtPessoa = conexao.prepareStatement(sqlPessoa);
-					ResultSet rsPessoa= stmtPessoa.executeQuery();
-					if(rsPessoa.next()) {
-						m.setStatusDaPessoa(rsPessoa.getString(7));
-						m.setSexo(rsPessoa.getString(6));
-						m.setTipoSanguineo(rsPessoa.getString(5));
-						m.setIdade(rsPessoa.getInt(4));
-						m.setCpf(rsPessoa.getString(3));
-						m.setNome(rsPessoa.getString(2));
-						ListaMedicos.add(m);
-					}
-				}
+				m.setIdMedico(rsMedico.getInt("idMedico"));
+				m.setNumeroderegistro(rsMedico.getInt("numeroRegistro"));
+				m.setEspecialidade(rsMedico.getString("especialidade"));
+				m.setIdFuncionario(rsMedico.getInt("IdFuncionario"));
+				m.setLogin(rsMedico.getString("login"));
+				m.setSenha(rsMedico.getString("senha"));
+				m.setStatusDeUsuario(rsMedico.getString("statusDeUsuario"));
+				m.setIdPessoa(rsMedico.getInt("idPessoa"));
+				m.setNome(rsMedico.getString("nome"));
+				m.setCpf(rsMedico.getString("cpf"));
+				m.setIdade(rsMedico.getInt("idade"));
+				m.setTipoSanguineo(rsMedico.getString("tipoSanguineo"));
+				m.setSexo(rsMedico.getString("sexo"));
+				m.setStatusDaPessoa(rsMedico.getString("statusPessoa"));
+				ListaMedicos.add(m);
 			}
 		} catch (SQLException e) {
 			// TODO: handle exception
