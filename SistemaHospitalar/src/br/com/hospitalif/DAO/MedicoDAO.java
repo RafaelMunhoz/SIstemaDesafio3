@@ -69,20 +69,19 @@ public class MedicoDAO {
 		try {
 			Conexao conn = new Conexao();
 			Connection conexao = conn.getConnection();
-
 			String sqlMedico = "SELECT m.*, f.*, p.* FROM medico m, funcionario f, pessoa p where m.idFuncionario = f.idFuncionario and f.idPessoa = p.idPessoa";
 			PreparedStatement stmtMedico = conexao.prepareStatement(sqlMedico);
 			ResultSet rsMedico = stmtMedico.executeQuery();
-			Medico m = new Medico();
 			if (rsMedico.next()) {
-				m.setIdMedico(rsMedico.getInt("idMedico"));
+				Medico m = new Medico();
+				m.setIdMedico(rsMedico.getInt(1));
 				m.setNumeroderegistro(rsMedico.getInt("numeroRegistro"));
 				m.setEspecialidade(rsMedico.getString("especialidade"));
-				m.setIdFuncionario(rsMedico.getInt("IdFuncionario"));
+				m.setIdFuncionario(rsMedico.getInt(4));
 				m.setLogin(rsMedico.getString("login"));
 				m.setSenha(rsMedico.getString("senha"));
 				m.setStatusDeUsuario(rsMedico.getString("statusDeUsuario"));
-				m.setIdPessoa(rsMedico.getInt("idPessoa"));
+				m.setIdPessoa(rsMedico.getInt(9));
 				m.setNome(rsMedico.getString("nome"));
 				m.setCpf(rsMedico.getString("cpf"));
 				m.setIdade(rsMedico.getInt("idade"));
@@ -93,6 +92,7 @@ public class MedicoDAO {
 			}
 		} catch (SQLException e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 		return ListaMedicos;
 	}
