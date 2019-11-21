@@ -88,6 +88,9 @@ public class MedicoDAO {
 				m.setTipoSanguineo(rsMedico.getString("tipoSanguineo"));
 				m.setSexo(rsMedico.getString("sexo"));
 				m.setStatusDaPessoa(rsMedico.getString("statusPessoa"));
+				System.out.println(rsMedico.getInt(1));
+				System.out.println(rsMedico.getInt("numeroRegistro"));
+				System.out.println(rsMedico.getString("nome"));
 				ListaMedicos.add(m);
 			}
 		} catch (SQLException e) {
@@ -96,7 +99,8 @@ public class MedicoDAO {
 		}
 		return ListaMedicos;
 	}
-
+	
+	
 	public void salvarEdicao(Pessoa p, Funcionario f, Medico m) throws SQLException {
 		Conexao conn = new Conexao();
 		Connection conexao = conn.getConnection();
@@ -141,6 +145,9 @@ public class MedicoDAO {
 		stmt.setInt(3, f.getIdFuncionario());
 		stmt.executeUpdate();
 	}
+	
+	
+	
 
 	public void removeById(int id) throws SQLException {
 		Conexao conn = new Conexao();
